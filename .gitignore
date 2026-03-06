@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+haaland_venv/
+
+# Datasets
+data/
+datasets/
+
+# Checkpoints / model weights
+checkpoints/
+*.ckpt
+*.pth
+*.pt
+
+# Experiment outputs
+results/
+runs/
+logs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Secrets
+.env
