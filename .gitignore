@@ -26,6 +26,7 @@ logs/
 
 # Jupyter
 .ipynb_checkpoints/
+notebooks/baseline_demo.ipynb
 
 # OS / editor
 .DS_Store
