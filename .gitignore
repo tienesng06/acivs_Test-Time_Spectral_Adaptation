@@ -11,13 +11,13 @@ haaland_venv/
 
 # Datasets
 data/
-datasets/
 
 # Checkpoints / model weights
 checkpoints/
 *.ckpt
 *.pth
 *.pt
+*.h5
 
 # Experiment outputs
 results/
