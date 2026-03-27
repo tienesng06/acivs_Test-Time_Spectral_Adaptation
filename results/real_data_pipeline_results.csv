@@ -1,0 +1,11 @@
+patch_name,query,total_ms,opt_ms,initial_loss,final_loss,weights_sum
+S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_40_08,A satellite image of complex cultivation patterns,914.78,2.58,0.0246,0.0241,1.0
+S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_42_22,A satellite image of complex cultivation patterns,370.76,1.5,0.0278,0.0267,1.0
+S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_44_15,A satellite image of complex cultivation patterns,450.22,3.58,0.0302,0.0293,1.0
+S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_67_70,A satellite image of complex cultivation patterns,416.5,3.58,0.0274,0.0255,1.0
+S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_76_67,A satellite image of complex cultivation patterns,402.4,2.42,0.0259,0.0245,1.0
+S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_01_44,A satellite image of complex cultivation patterns,485.4,2.63,0.027,0.0261,1.0
+S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_04_62,A satellite image of complex cultivation patterns,539.08,4.03,0.0302,0.0283,1.0
+S2A_MSIL2A_20180219T094031_N9999_R036_T35WPP_18_56,A satellite image of complex cultivation patterns,452.78,2.81,0.0385,0.0377,1.0
+S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_26_35,A satellite image of complex cultivation patterns,539.52,2.58,0.0302,0.0288,1.0
+S2A_MSIL2A_20180228T101021_N9999_R022_T34WFS_71_69,A satellite image of complex cultivation patterns,421.07,2.67,0.0337,0.0324,1.0
