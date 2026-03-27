@@ -20,7 +20,6 @@ checkpoints/
 *.h5
 
 # Experiment outputs
-results/
 runs/
 logs/
 
