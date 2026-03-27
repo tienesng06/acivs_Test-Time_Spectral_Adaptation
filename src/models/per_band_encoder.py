@@ -44,8 +44,8 @@ def preprocess_band_stack(
     if image_13band.ndim != 3:
         raise ValueError(f"Expected shape (13, H, W), got {tuple(image_13band.shape)}")
 
-    if image_13band.shape[0] != 13:
-        raise ValueError(f"Expected 13 bands, got {image_13band.shape[0]}")
+    if image_13band.shape[0] < 2:
+        raise ValueError(f"Expected at least 2 bands, got {image_13band.shape[0]}")
 
     x = image_13band.to(torch.float32)
 
@@ -128,8 +128,8 @@ def preprocess_band_batch(
     if images.ndim != 4:
         raise ValueError(f"Expected shape (N, 13, H, W), got {tuple(images.shape)}")
 
-    if images.shape[1] != 13:
-        raise ValueError(f"Expected 13 bands, got {images.shape[1]}")
+    if images.shape[1] < 2:
+        raise ValueError(f"Expected at least 2 bands, got {images.shape[1]}")
 
     x = images.to(torch.float32)
 
@@ -198,10 +198,10 @@ def encode_multispectral_batch(
             feats = F.normalize(feats, dim=-1)
         all_feats.append(feats.cpu())
 
-    all_feats = torch.cat(all_feats, dim=0)  # (N*13, 512)
+    all_feats = torch.cat(all_feats, dim=0)  # (N*B, 512)
 
-    n = images.shape[0]
-    all_feats = all_feats.view(n, 13, -1)    # (N, 13, 512)
+    n, b = images.shape[0], images.shape[1]
+    all_feats = all_feats.view(n, b, -1)     # (N, B, 512)
 
     return all_feats
 
