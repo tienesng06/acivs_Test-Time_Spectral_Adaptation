@@ -83,6 +83,23 @@ def evaluate_text_to_image_retrieval(
     for k in ks:
         metrics[f"R@{k}"] = ranked_relevance[:, :k].any(dim=1).float().mean().item() * 100.0
 
+    # Calculate for Multi-labeled datasets
+    if query_labels.ndim > 1:
+        for k in ks:
+            hits_in_k = ranked_relevance[:, :k].float().sum(dim=1) 
+            total_relevant = relevance_matrix.float().sum(dim=1) 
+            
+            precision_k = (hits_in_k / k).mean().item() * 100.0
+            recall_k = (hits_in_k / torch.clamp(total_relevant, min=1)).mean().item() * 100.0
+            
+            f1_k = 0.0
+            if precision_k + recall_k > 0:
+                f1_k = 2 * (precision_k * recall_k) / (precision_k + recall_k)
+                
+            metrics[f"P@{k}"] = precision_k
+            metrics[f"ML_Recall@{k}"] = recall_k
+            metrics[f"F1@{k}"] = f1_k
+
     ap_scores = []
     first_hit_ranks = []
 
