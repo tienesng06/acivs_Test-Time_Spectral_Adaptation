@@ -37,8 +37,8 @@ def main():
         
     ds = BigEarthNetDataset(
         root=root_dir,
-        split="query",
-        max_samples=50,  # Quick test
+        split="all",
+        max_samples=100,
         use_cache=False,
     )
     
