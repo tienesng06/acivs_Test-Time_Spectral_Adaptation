@@ -1,0 +1,5 @@
+cause,count,percentage,affected_classes,avg_confidence
+Cloud Cover,0,0.0,,0.000
+Mixed Scene,0,0.0,,0.000
+Rare Class,0,0.0,,0.000
+Seasonal Variation,525,100.0,AnnualCrop; Forest; HerbaceousVegetation; Highway; Industrial; Pasture; PermanentCrop; Residential; River; SeaLake,0.974
