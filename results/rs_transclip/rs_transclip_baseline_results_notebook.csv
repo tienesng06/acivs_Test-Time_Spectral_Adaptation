@@ -1,0 +1,2 @@
+dataset,task,variant,num_queries,num_gallery,num_classes,seed,best_alpha,alpha_candidates,patch_pool_size,affinity_topk,base_R@1,base_R@5,base_R@10,base_mAP,R@1,R@5,R@10,mAP
+EuroSAT_MS,image_to_image_single_label,RS-TransCLIP_RGB_cross_patch,2700,2700,10,42,0.3,0.3|0.5|0.7,4,20,78.88888716697693,94.48148012161255,97.3703682422638,41.005853913448476,76.85185074806213,91.96296334266663,95.333331823349,43.811700839687276
