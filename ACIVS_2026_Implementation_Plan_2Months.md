@@ -130,7 +130,7 @@
 ### Day 8-10: Per-Band CLIP Encoding
 
 **Implementation:**
-- [ ] Create per-band encoding function:
+- [x] Create per-band encoding function:
   ```python
   def encode_multispectral_bands(image_13band, clip_model):
       """
@@ -201,8 +201,8 @@
   ```
 
 **Hyperparameter Tuning:**
-- [ ] Grid search for sigma: [0.1, 0.3, 0.5, 0.7, 1.0]
-- [ ] Evaluate impact on R@10 (expect <1.5% variance per paper)
+- [x] Grid search for sigma: [0.1, 0.3, 0.5, 0.7, 1.0]
+- [x] Evaluate impact on R@10 (expect <1.5% variance per paper)
 
 **Deliverables:**
 - Affinity graph construction function
