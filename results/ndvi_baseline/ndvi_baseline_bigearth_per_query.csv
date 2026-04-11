@@ -1,0 +1,1001 @@
+query_index,num_active_labels,num_relevant_gallery,AP_percent,first_hit_rank,hit@1,hit@5,hit@10,patch_name,label_names
+0,4,8175,83.02306532859802,1,True,True,True,S2A_MSIL2A_20171104T095201_N9999_R079_T33TXN_14_38,Arable land|Broad-leaved forest|Complex cultivation patterns|Urban fabric
+1,3,6606,75.5865752696991,1,True,True,True,S2A_MSIL2A_20171104T095201_N9999_R079_T33TXN_15_22,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+2,2,4201,57.781821489334106,1,True,True,True,S2A_MSIL2A_20171104T095201_N9999_R079_T33TXN_15_27,Arable land|Urban fabric
+3,2,4201,64.263916015625,1,True,True,True,S2A_MSIL2A_20171104T095201_N9999_R079_T33TXN_15_28,Arable land|Urban fabric
+4,4,7990,84.17800664901733,1,True,True,True,S2A_MSIL2A_20171104T095201_N9999_R079_T33TXN_15_40,Broad-leaved forest|Complex cultivation patterns|Coniferous forest|Mixed forest
+5,2,7680,78.89084219932556,1,True,True,True,S2A_MSIL2A_20171104T095201_N9999_R079_T33TXN_16_24,Arable land|Broad-leaved forest
+6,1,3907,59.29359793663025,1,True,True,True,S2A_MSIL2A_20171104T095201_N9999_R079_T33TXN_16_30,Arable land
+7,4,8175,82.7364444732666,1,True,True,True,S2A_MSIL2A_20171104T095201_N9999_R079_T33TXN_17_35,Arable land|Broad-leaved forest|Complex cultivation patterns|Urban fabric
+8,2,7680,77.56964564323425,2,False,True,True,S2A_MSIL2A_20171104T095201_N9999_R079_T33TXN_18_31,Arable land|Broad-leaved forest
+9,3,7864,78.52902412414551,1,True,True,True,S2A_MSIL2A_20171104T095201_N9999_R079_T33TXN_18_33,Arable land|Broad-leaved forest|Urban fabric
+10,2,4201,61.48163080215454,1,True,True,True,S2A_MSIL2A_20171104T095201_N9999_R079_T33TXN_19_34,Arable land|Urban fabric
+11,2,4201,62.616097927093506,1,True,True,True,S2A_MSIL2A_20171104T095201_N9999_R079_T33TXN_20_27,Arable land|Urban fabric
+12,2,7680,77.90892124176025,1,True,True,True,S2A_MSIL2A_20171104T095201_N9999_R079_T33TXN_22_28,Arable land|Broad-leaved forest
+13,2,7680,79.72472906112671,1,True,True,True,S2A_MSIL2A_20171104T095201_N9999_R079_T33TXN_29_13,Arable land|Broad-leaved forest
+14,2,6487,74.17556047439575,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_13_19,Complex cultivation patterns|Transitional woodland/shrub
+15,3,7641,88.94822001457214,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_13_34,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+16,4,6687,63.52412700653076,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_13_44,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+17,3,7270,81.77471160888672,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_13_47,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+18,4,4535,43.14761161804199,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_13_55,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Natural grassland and sparsely vegetated areas|Urban fabric"
+19,6,9469,92.13719964027405,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_13_57,Arable land|Broad-leaved forest|Complex cultivation patterns|Mixed forest|Transitional woodland/shrub|Urban fabric
+20,4,7501,76.32350325584412,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_13_58,Complex cultivation patterns|Mixed forest|Transitional woodland/shrub|Urban fabric
+21,1,2268,26.4279305934906,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_13_73,Complex cultivation patterns
+22,1,3907,42.19629764556885,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_13_76,Arable land
+23,2,4194,44.659098982810974,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_14_39,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+24,2,5089,54.71957325935364,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_14_74,Arable land|Complex cultivation patterns
+25,2,5581,70.90834975242615,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_15_14,Broad-leaved forest|Natural grassland and sparsely vegetated areas
+26,3,6971,76.1510968208313,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_15_18,Natural grassland and sparsely vegetated areas|Pastures|Transitional woodland/shrub
+27,2,5089,58.87328386306763,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_15_39,Arable land|Complex cultivation patterns
+28,3,6606,70.62798142433167,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_15_41,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+29,4,8735,91.84839129447937,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_15_45,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+30,2,2600,25.173792243003845,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_15_55,Complex cultivation patterns|Urban fabric
+31,2,5277,54.86261248588562,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_15_76,Arable land|Mixed forest
+32,3,6827,69.37749981880188,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_16_18,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub|Urban fabric"
+33,3,8146,84.73828434944153,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_16_38,Arable land|Complex cultivation patterns|Transitional woodland/shrub
+34,4,9003,92.47244000434875,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_16_50,Arable land|Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub
+35,3,8506,84.12064909934998,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_16_58,Arable land|Broad-leaved forest|Mixed forest
+36,1,3907,60.31445860862732,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_16_59,Arable land
+37,1,3907,39.23763632774353,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_16_63,Arable land
+38,2,6493,73.13327193260193,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_17_19,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+39,2,4194,42.93577969074249,3,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_17_22,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+40,1,2888,27.48950719833374,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_17_24,"Land principally occupied by agriculture, with significant areas of natural vegetation"
+41,4,9003,90.928715467453,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_17_55,Arable land|Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub
+42,1,3907,56.111907958984375,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_17_58,Arable land
+43,3,8146,86.01754307746887,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_17_65,Arable land|Complex cultivation patterns|Transitional woodland/shrub
+44,3,7659,70.35794854164124,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_17_76,Broad-leaved forest|Mixed forest|Transitional woodland/shrub
+45,2,6493,76.05881690979004,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_18_17,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+46,3,7286,79.48387861251831,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_18_26,Complex cultivation patterns|Mixed forest|Transitional woodland/shrub
+47,5,9067,89.94617462158203,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_18_34,Arable land|Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub|Urban fabric
+48,2,7680,77.97479033470154,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_18_54,Arable land|Broad-leaved forest
+49,2,5089,57.17816352844238,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_19_43,Arable land|Complex cultivation patterns
+50,1,2268,23.762649297714233,5,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_20_41,Complex cultivation patterns
+51,2,5089,60.24410128593445,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_20_42,Arable land|Complex cultivation patterns
+52,3,6606,74.26871061325073,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_20_45,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+53,3,6274,68.22368502616882,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_20_51,Arable land|Complex cultivation patterns|Mixed forest
+54,4,9003,91.38450026512146,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_20_61,Arable land|Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub
+55,2,4357,41.54720604419708,15,False,False,False,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_21_22,"Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+56,2,6493,72.37609028816223,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_21_25,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+57,2,3335,43.278855085372925,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_22_47,"Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+58,4,8152,81.61234259605408,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_22_66,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+59,4,9003,93.91071200370789,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_22_67,Arable land|Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub
+60,1,3907,39.569297432899475,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_22_74,Arable land
+61,1,5176,62.69589066505432,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_23_17,Transitional woodland/shrub
+62,3,6727,77.49050855636597,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_23_19,Complex cultivation patterns|Transitional woodland/shrub|Urban fabric
+63,3,8075,85.0902795791626,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_23_76,Arable land|Broad-leaved forest|Complex cultivation patterns
+64,1,5176,49.61288869380951,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_24_16,Transitional woodland/shrub
+65,2,6487,70.2824354171753,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_24_20,Complex cultivation patterns|Transitional woodland/shrub
+66,3,8506,84.0613305568695,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_24_73,Arable land|Broad-leaved forest|Mixed forest
+67,2,6118,69.3291962146759,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_25_17,Mixed forest|Transitional woodland/shrub
+68,2,5105,60.9582245349884,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_25_74,Arable land|Pastures
+69,2,4357,42.39919185638428,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_26_14,"Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+70,1,5176,66.60669445991516,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_26_18,Transitional woodland/shrub
+71,1,3907,47.85534739494324,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_26_74,Arable land
+72,2,6493,75.7463276386261,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_27_22,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+73,5,8371,90.34843444824219,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_27_69,"Broad-leaved forest|Complex cultivation patterns|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+74,2,6118,72.06028699874878,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_27_73,Mixed forest|Transitional woodland/shrub
+75,3,6274,59.548622369766235,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_28_71,Arable land|Complex cultivation patterns|Mixed forest
+76,3,8075,83.84464979171753,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_28_75,Arable land|Broad-leaved forest|Complex cultivation patterns
+77,2,6493,74.65776205062866,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_29_13,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+78,3,6827,74.2085874080658,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_29_14,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub|Urban fabric"
+79,1,725,7.235753536224365,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_29_16,Urban fabric
+80,3,4420,47.46344983577728,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_29_20,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+81,2,6028,55.15211820602417,3,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_29_22,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation"
+82,5,9507,98.30529689788818,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_29_70,Arable land|Broad-leaved forest|Complex cultivation patterns|Pastures|Transitional woodland/shrub
+83,2,7044,82.24620223045349,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_30_70,Broad-leaved forest|Transitional woodland/shrub
+84,2,7680,80.8517336845398,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_30_74,Arable land|Broad-leaved forest
+85,1,5176,62.38815784454346,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_31_15,Transitional woodland/shrub
+86,2,4194,41.1002516746521,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_31_21,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+87,1,2888,27.19658613204956,8,False,False,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_32_14,"Land principally occupied by agriculture, with significant areas of natural vegetation"
+88,3,4420,46.084582805633545,4,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_32_19,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+89,2,4194,42.591312527656555,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_32_22,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+90,2,3335,30.998429656028748,9,False,False,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_33_21,"Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+91,5,9172,93.52529048919678,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_33_71,"Arable land|Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+92,4,9239,94.37404274940491,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_34_69,Arable land|Broad-leaved forest|Mixed forest|Transitional woodland/shrub
+93,5,7614,73.09504747390747,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_35_71,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Urban fabric"
+94,4,7891,82.03807473182678,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_36_14,"Complex cultivation patterns|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+95,3,4420,44.57227289676666,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_36_18,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+96,2,5089,59.30320620536804,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_36_73,Arable land|Complex cultivation patterns
+97,2,5277,51.303309202194214,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_37_76,Arable land|Mixed forest
+98,3,6274,63.71992230415344,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_37_77,Arable land|Complex cultivation patterns|Mixed forest
+99,2,4357,43.60271692276001,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_38_13,"Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+100,1,1907,19.850841164588928,3,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_38_14,Mixed forest
+101,2,5277,50.18901824951172,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_38_69,Arable land|Mixed forest
+102,4,5699,56.6542387008667,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_40_16,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Urban fabric"
+103,5,9172,90.69163203239441,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_40_18,"Arable land|Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+104,1,3907,50.07598400115967,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_40_70,Arable land
+105,5,9721,97.56719470024109,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_40_76,Arable land|Broad-leaved forest|Mixed forest|Pastures|Transitional woodland/shrub
+106,5,9463,96.0657000541687,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_40_77,Arable land|Broad-leaved forest|Coniferous forest|Mixed forest|Transitional woodland/shrub
+107,4,8971,89.4465982913971,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_41_19,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+108,4,9228,91.87890291213989,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_41_77,Arable land|Broad-leaved forest|Mixed forest|Pastures
+109,2,6505,79.00272011756897,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_42_17,Broad-leaved forest|Complex cultivation patterns
+110,4,9352,93.9559817314148,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_42_72,Arable land|Broad-leaved forest|Coniferous forest|Transitional woodland/shrub
+111,3,8506,87.01344728469849,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_42_76,Arable land|Broad-leaved forest|Mixed forest
+112,4,8175,85.95343828201294,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_43_15,Arable land|Broad-leaved forest|Complex cultivation patterns|Urban fabric
+113,3,7707,83.76479148864746,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_43_71,Broad-leaved forest|Complex cultivation patterns|Coniferous forest
+114,3,6181,62.61366009712219,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_44_14,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+115,4,8570,89.7237777709961,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_44_19,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub|Urban fabric"
+116,4,9239,94.65684294700623,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_45_13,Arable land|Broad-leaved forest|Mixed forest|Transitional woodland/shrub
+117,4,7903,82.14535117149353,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_45_21,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+118,2,7044,77.49698162078857,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_45_73,Broad-leaved forest|Transitional woodland/shrub
+119,4,9239,94.09034252166748,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_45_76,Arable land|Broad-leaved forest|Mixed forest|Transitional woodland/shrub
+120,3,7659,86.85798048973083,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_45_77,Broad-leaved forest|Mixed forest|Transitional woodland/shrub
+121,3,7746,86.55030131340027,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_47_14,Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub
+122,4,7949,89.30033445358276,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_47_74,Broad-leaved forest|Coniferous forest|Mixed forest|Transitional woodland/shrub
+123,5,7816,87.46204376220703,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_48_73,"Broad-leaved forest|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Natural grassland and sparsely vegetated areas"
+124,3,7659,88.54972124099731,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_49_15,Broad-leaved forest|Mixed forest|Transitional woodland/shrub
+125,2,6493,75.87603330612183,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_49_20,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+126,2,6589,76.97161436080933,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_49_74,Broad-leaved forest|Mixed forest
+127,3,8789,92.65639781951904,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_49_76,Arable land|Broad-leaved forest|Transitional woodland/shrub
+128,3,7641,88.1807804107666,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_50_20,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+129,3,7641,86.11637949943542,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_50_21,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+130,4,7903,83.19162726402283,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_51_14,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+131,2,7044,78.1329870223999,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_51_20,Broad-leaved forest|Transitional woodland/shrub
+132,2,6589,79.59656715393066,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_51_72,Broad-leaved forest|Mixed forest
+133,4,8177,93.10654401779175,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_52_13,"Broad-leaved forest|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+134,4,7771,86.67420148849487,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_52_14,"Broad-leaved forest|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+135,3,7494,85.01303195953369,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_53_14,"Broad-leaved forest|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+136,3,7737,88.9533281326294,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_53_15,Broad-leaved forest|Coniferous forest|Transitional woodland/shrub
+137,3,7058,68.20520162582397,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_53_69,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+138,4,8971,91.6058599948883,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_54_69,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+139,3,7130,81.56687617301941,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_55_14,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+140,4,8944,89.01314735412598,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_55_71,Arable land|Broad-leaved forest|Coniferous forest|Mixed forest
+141,3,8299,86.05340719223022,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_55_76,Broad-leaved forest|Mixed forest|Pastures
+142,2,7044,78.87776494026184,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_56_13,Broad-leaved forest|Transitional woodland/shrub
+143,3,7641,91.19560122489929,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_56_14,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+144,1,5176,61.573708057403564,3,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_56_17,Transitional woodland/shrub
+145,1,5508,69.60381269454956,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_56_73,Broad-leaved forest
+146,3,8299,85.47077775001526,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_56_74,Broad-leaved forest|Mixed forest|Pastures
+147,3,8299,86.0812246799469,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_56_75,Broad-leaved forest|Mixed forest|Pastures
+148,2,6493,77.82757878303528,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_57_15,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+149,3,7746,87.66183853149414,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_57_21,Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub
+150,2,7044,85.67447066307068,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_58_18,Broad-leaved forest|Transitional woodland/shrub
+151,3,8789,88.91221880912781,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_58_72,Arable land|Broad-leaved forest|Transitional woodland/shrub
+152,1,5508,63.39063048362732,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_58_76,Broad-leaved forest
+153,5,9336,93.28809976577759,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_59_74,Arable land|Broad-leaved forest|Mixed forest|Transitional woodland/shrub|Urban fabric
+154,3,7659,87.79147863388062,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_59_75,Broad-leaved forest|Mixed forest|Transitional woodland/shrub
+155,3,7659,79.97460961341858,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_60_77,Broad-leaved forest|Mixed forest|Transitional woodland/shrub
+156,3,4956,49.788668751716614,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_61_19,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+157,1,5508,67.57569313049316,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_61_77,Broad-leaved forest
+158,2,5997,72.42701053619385,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_62_13,Coniferous forest|Transitional woodland/shrub
+159,4,8177,90.97678065299988,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_62_16,"Broad-leaved forest|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+160,4,7891,86.73771023750305,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_63_15,"Complex cultivation patterns|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+161,3,7130,82.86205530166626,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_65_17,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+162,3,6507,72.90305495262146,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_66_18,Coniferous forest|Transitional woodland/shrub|Urban fabric
+163,2,7597,80.00447750091553,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_66_76,Arable land|Transitional woodland/shrub
+164,2,7597,79.59502935409546,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_66_77,Arable land|Transitional woodland/shrub
+165,3,7746,80.52592277526855,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_67_18,Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub
+166,2,7597,80.6490421295166,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_67_75,Arable land|Transitional woodland/shrub
+167,1,2429,28.69408130645752,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_67_77,Pastures
+168,3,7278,78.382408618927,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_68_15,Complex cultivation patterns|Coniferous forest|Transitional woodland/shrub
+169,3,7270,84.95490550994873,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_68_21,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+170,2,5277,50.62019228935242,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_68_71,Arable land|Mixed forest
+171,3,8789,90.84948897361755,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_68_75,Arable land|Broad-leaved forest|Transitional woodland/shrub
+172,1,2268,31.570357084274292,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_69_46,Complex cultivation patterns
+173,1,5508,74.13256764411926,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_69_57,Broad-leaved forest
+174,2,7680,79.06328439712524,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_69_60,Arable land|Broad-leaved forest
+175,1,3907,40.9733921289444,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_69_72,Arable land
+176,3,6507,73.4320342540741,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_70_15,Coniferous forest|Transitional woodland/shrub|Urban fabric
+177,3,6613,78.18631529808044,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_70_27,Mixed forest|Transitional woodland/shrub|Urban fabric
+178,4,8100,90.92381596565247,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_70_28,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+179,1,5508,72.25967049598694,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_70_63,Broad-leaved forest
+180,1,3907,47.06904888153076,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_70_72,Arable land
+181,1,3907,45.36142945289612,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_70_73,Arable land
+182,4,7450,79.55823540687561,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_71_16,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub|Urban fabric"
+183,2,6487,77.8213381767273,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_71_19,Complex cultivation patterns|Transitional woodland/shrub
+184,4,8177,86.48698925971985,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_71_24,"Broad-leaved forest|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+185,4,8152,90.82908630371094,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_71_38,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+186,3,8346,87.94552087783813,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_71_43,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+187,2,7680,81.81427717208862,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_71_59,Arable land|Broad-leaved forest
+188,1,5176,56.95433020591736,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_71_76,Transitional woodland/shrub
+189,2,6505,79.58267331123352,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_72_51,Broad-leaved forest|Complex cultivation patterns
+190,3,7760,80.82417249679565,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_72_54,Broad-leaved forest|Pastures|Urban fabric
+191,2,7680,81.72873258590698,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_72_57,Arable land|Broad-leaved forest
+192,3,8789,91.49437546730042,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_72_67,Arable land|Broad-leaved forest|Transitional woodland/shrub
+193,1,5176,55.5677056312561,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_73_14,Transitional woodland/shrub
+194,1,5176,57.242971658706665,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_73_16,Transitional woodland/shrub
+195,2,6510,78.32004427909851,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_73_50,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+196,2,7044,84.89852547645569,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_73_58,Broad-leaved forest|Transitional woodland/shrub
+197,2,7044,84.70730781555176,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_73_66,Broad-leaved forest|Transitional woodland/shrub
+198,3,8789,92.36878752708435,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_73_67,Arable land|Broad-leaved forest|Transitional woodland/shrub
+199,2,4194,47.52252995967865,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_74_23,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+200,4,9139,96.11178636550903,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_74_44,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+201,2,5105,42.63673722743988,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_74_71,Arable land|Pastures
+202,5,8574,92.88662075996399,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_75_21,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+203,4,7903,89.64650630950928,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_75_24,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+204,6,8715,89.25766348838806,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_75_25,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub|Urban fabric"
+205,6,9695,98.01063537597656,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_75_49,"Arable land|Broad-leaved forest|Complex cultivation patterns|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+206,2,7680,80.32315969467163,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_75_59,Arable land|Broad-leaved forest
+207,3,7659,88.82594108581543,1,True,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_76_29,Broad-leaved forest|Mixed forest|Transitional woodland/shrub
+208,3,7726,77.49603986740112,2,False,True,True,S2A_MSIL2A_20171121T112351_N9999_R037_T29SND_77_38,Arable land|Broad-leaved forest|Natural grassland and sparsely vegetated areas
+209,2,4112,32.39456117153168,9,False,False,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_13_33,Arable land|Natural grassland and sparsely vegetated areas
+210,1,3907,29.301685094833374,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_13_50,Arable land
+211,1,3907,29.608359932899475,16,False,False,False,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_14_26,Arable land
+212,1,3907,41.21052324771881,3,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_14_32,Arable land
+213,3,8478,84.43571329116821,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_14_47,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+214,3,7778,81.3817024230957,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_14_58,Arable land|Transitional woodland/shrub|Urban fabric
+215,2,7044,83.32412838935852,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_14_64,Broad-leaved forest|Transitional woodland/shrub
+216,3,7737,89.04855251312256,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_14_70,Broad-leaved forest|Coniferous forest|Transitional woodland/shrub
+217,2,7044,88.15169930458069,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_14_71,Broad-leaved forest|Transitional woodland/shrub
+218,4,8205,87.11349964141846,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_15_19,Arable land|Complex cultivation patterns|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub
+219,3,8478,88.49589824676514,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_15_28,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+220,3,6181,57.40227699279785,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_15_38,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+221,4,8568,86.25708818435669,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_15_41,"Arable land|Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+222,3,6606,72.68327474594116,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_15_53,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+223,3,6154,77.63657569885254,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_15_54,Arable land|Complex cultivation patterns|Pastures
+224,4,8772,93.57373714447021,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_15_55,Arable land|Complex cultivation patterns|Pastures|Transitional woodland/shrub
+225,3,8075,82.28991031646729,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_16_17,Arable land|Broad-leaved forest|Complex cultivation patterns
+226,2,5105,55.18951416015625,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_16_33,Arable land|Pastures
+227,5,9198,92.06569790840149,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_16_49,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+228,3,7204,66.20848178863525,2,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_16_50,"Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+229,3,7641,91.10057950019836,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_16_73,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+230,2,3719,31.143704056739807,4,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_16_75,Complex cultivation patterns|Coniferous forest
+231,3,6772,62.52028942108154,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_17_17,Broad-leaved forest|Complex cultivation patterns|Urban fabric
+232,3,8293,89.60855603218079,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_17_25,Arable land|Pastures|Transitional woodland/shrub
+233,3,5981,58.65629315376282,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_17_32,Arable land|Coniferous forest|Pastures
+234,3,5981,72.66772985458374,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_17_33,Arable land|Coniferous forest|Pastures
+235,3,8075,81.8207859992981,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_17_41,Arable land|Broad-leaved forest|Complex cultivation patterns
+236,3,8789,85.37341356277466,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_17_58,Arable land|Broad-leaved forest|Transitional woodland/shrub
+237,2,5105,62.98454403877258,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_18_33,Arable land|Pastures
+238,3,8789,90.37465453147888,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_19_20,Arable land|Broad-leaved forest|Transitional woodland/shrub
+239,4,9333,95.45390605926514,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_19_22,Arable land|Broad-leaved forest|Pastures|Transitional woodland/shrub
+240,2,7044,78.90914678573608,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_19_55,Broad-leaved forest|Transitional woodland/shrub
+241,2,7044,82.80276656150818,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_19_61,Broad-leaved forest|Transitional woodland/shrub
+242,2,2600,25.913837552070618,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_19_77,Complex cultivation patterns|Urban fabric
+243,3,8789,92.37425923347473,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_20_13,Arable land|Broad-leaved forest|Transitional woodland/shrub
+244,3,7679,76.11705660820007,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_20_41,Mixed forest|Pastures|Transitional woodland/shrub
+245,3,8529,91.62901043891907,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_20_43,Broad-leaved forest|Pastures|Transitional woodland/shrub
+246,1,5176,65.4975175857544,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_20_68,Transitional woodland/shrub
+247,3,7641,88.37906122207642,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_21_17,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+248,4,8957,87.4781608581543,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_21_28,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures|Transitional woodland/shrub"
+249,4,9333,97.3671555519104,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_21_31,Arable land|Broad-leaved forest|Pastures|Transitional woodland/shrub
+250,3,7679,81.28540515899658,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_21_41,Mixed forest|Pastures|Transitional woodland/shrub
+251,2,5997,72.58793115615845,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_21_67,Coniferous forest|Transitional woodland/shrub
+252,2,7044,83.61408114433289,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_22_18,Broad-leaved forest|Transitional woodland/shrub
+253,4,9139,95.05172967910767,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_22_27,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+254,3,7641,90.79427719116211,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_22_30,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+255,3,8789,92.09735989570618,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_22_45,Arable land|Broad-leaved forest|Transitional woodland/shrub
+256,2,7044,80.15590310096741,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_22_46,Broad-leaved forest|Transitional woodland/shrub
+257,2,7044,84.47970151901245,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_22_61,Broad-leaved forest|Transitional woodland/shrub
+258,3,7746,86.71226501464844,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_22_63,Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub
+259,3,7737,87.9701554775238,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_22_65,Broad-leaved forest|Coniferous forest|Transitional woodland/shrub
+260,2,4194,44.38924491405487,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_22_73,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+261,3,6606,66.06760025024414,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_23_73,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+262,3,6606,64.6331250667572,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_23_74,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+263,3,8146,86.76300048828125,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_24_22,Arable land|Complex cultivation patterns|Transitional woodland/shrub
+264,4,6687,74.50479865074158,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_24_74,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+265,5,9067,92.25565791130066,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_25_20,Arable land|Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub|Urban fabric
+266,1,5176,62.32823729515076,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_25_70,Transitional woodland/shrub
+267,4,6273,72.84207344055176,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_25_73,Arable land|Complex cultivation patterns|Pastures|Urban fabric
+268,2,7680,79.61368560791016,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_26_15,Arable land|Broad-leaved forest
+269,3,8346,87.60632276535034,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_26_17,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+270,4,9139,95.93129754066467,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_27_17,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+271,2,2600,37.775760889053345,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_28_73,Complex cultivation patterns|Urban fabric
+272,3,8146,85.01377701759338,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_31_14,Arable land|Complex cultivation patterns|Transitional woodland/shrub
+273,3,6606,75.02157688140869,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_31_71,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+274,2,6510,82.12116360664368,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_32_18,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+275,2,2600,27.78206765651703,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_32_73,Complex cultivation patterns|Urban fabric
+276,4,8957,96.1664617061615,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_33_18,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures|Transitional woodland/shrub"
+277,2,7044,82.43467211723328,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_33_69,Broad-leaved forest|Transitional woodland/shrub
+278,1,725,23.10875654220581,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_33_74,Urban fabric
+279,2,7044,84.11275148391724,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_34_17,Broad-leaved forest|Transitional woodland/shrub
+280,3,8789,92.3604667186737,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_35_13,Arable land|Broad-leaved forest|Transitional woodland/shrub
+281,3,8789,90.81246256828308,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_35_21,Arable land|Broad-leaved forest|Transitional woodland/shrub
+282,2,2600,32.06781446933746,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_35_74,Complex cultivation patterns|Urban fabric
+283,2,6505,68.78262758255005,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_36_13,Broad-leaved forest|Complex cultivation patterns
+284,4,9139,95.00178098678589,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_36_22,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+285,4,9333,95.97727060317993,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_37_20,Arable land|Broad-leaved forest|Pastures|Transitional woodland/shrub
+286,2,7680,79.27795052528381,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_38_16,Arable land|Broad-leaved forest
+287,3,4607,51.14237070083618,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_39_73,Complex cultivation patterns|Natural grassland and sparsely vegetated areas|Pastures
+288,3,8293,88.8771653175354,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_40_18,Arable land|Pastures|Transitional woodland/shrub
+289,2,4201,46.008288860321045,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_40_70,Arable land|Urban fabric
+290,1,2268,30.195319652557373,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_40_72,Complex cultivation patterns
+291,3,5227,64.49764370918274,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_40_74,Arable land|Complex cultivation patterns|Urban fabric
+292,3,8529,92.74343848228455,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_41_18,Broad-leaved forest|Pastures|Transitional woodland/shrub
+293,4,9139,94.60750222206116,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_41_22,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+294,1,5176,58.39853882789612,4,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_42_13,Transitional woodland/shrub
+295,2,7680,78.5348117351532,2,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_42_15,Arable land|Broad-leaved forest
+296,3,8789,90.61768054962158,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_43_15,Arable land|Broad-leaved forest|Transitional woodland/shrub
+297,3,8146,83.90676975250244,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_43_20,Arable land|Complex cultivation patterns|Transitional woodland/shrub
+298,3,8075,80.67737817764282,2,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_44_19,Arable land|Broad-leaved forest|Complex cultivation patterns
+299,2,6028,60.64425706863403,2,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_44_74,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation"
+300,3,8472,88.90434503555298,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_45_18,Arable land|Broad-leaved forest|Pastures
+301,3,8472,87.97249794006348,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_45_21,Arable land|Broad-leaved forest|Pastures
+302,2,7680,79.71830368041992,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_45_22,Arable land|Broad-leaved forest
+303,2,4194,42.53188371658325,2,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_46_70,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+304,1,2268,22.418344020843506,2,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_46_75,Complex cultivation patterns
+305,3,4676,41.05749726295471,3,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_46_77,Complex cultivation patterns|Pastures|Urban fabric
+306,1,3907,44.41007375717163,3,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_47_17,Arable land
+307,3,8146,86.2092137336731,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_50_21,Arable land|Complex cultivation patterns|Transitional woodland/shrub
+308,3,4420,52.665239572525024,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_51_72,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+309,2,4894,47.90210723876953,2,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_51_74,"Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures"
+310,3,8246,85.12850999832153,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_52_15,Arable land|Coniferous forest|Transitional woodland/shrub
+311,1,3907,55.77002763748169,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_54_15,Arable land
+312,1,3907,43.08924376964569,3,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_54_19,Arable land
+313,2,7597,81.49639368057251,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_55_18,Arable land|Transitional woodland/shrub
+314,1,3907,48.30698072910309,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_55_19,Arable land
+315,2,3335,36.890584230422974,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_56_77,"Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+316,1,725,25.298553705215454,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_57_75,Urban fabric
+317,1,2429,30.471554398536682,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_58_22,Pastures
+318,2,2600,27.41706371307373,4,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_60_70,Complex cultivation patterns|Urban fabric
+319,1,2268,24.821949005126953,6,False,False,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_61_77,Complex cultivation patterns
+320,2,5089,49.94593858718872,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_62_77,Arable land|Complex cultivation patterns
+321,1,3907,51.79433822631836,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_64_15,Arable land
+322,1,3907,48.679327964782715,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_64_18,Arable land
+323,1,2888,28.223055601119995,8,False,False,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_64_74,"Land principally occupied by agriculture, with significant areas of natural vegetation"
+324,2,5089,62.54643797874451,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_65_21,Arable land|Complex cultivation patterns
+325,1,3907,53.2661497592926,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_67_18,Arable land
+326,1,2888,28.932732343673706,2,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_67_71,"Land principally occupied by agriculture, with significant areas of natural vegetation"
+327,2,5089,62.69834637641907,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_68_15,Arable land|Complex cultivation patterns
+328,2,4194,44.68413293361664,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_68_76,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+329,1,2429,21.714316308498383,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_69_45,Pastures
+330,1,5176,61.2514853477478,2,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_70_31,Transitional woodland/shrub
+331,2,6894,74.26461577415466,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_70_32,Pastures|Transitional woodland/shrub
+332,2,6894,61.38278841972351,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_70_33,Pastures|Transitional woodland/shrub
+333,3,8246,82.95727372169495,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_70_36,Arable land|Coniferous forest|Transitional woodland/shrub
+334,2,7044,84.09520387649536,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_70_54,Broad-leaved forest|Transitional woodland/shrub
+335,2,7044,85.13683676719666,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_70_59,Broad-leaved forest|Transitional woodland/shrub
+336,2,4194,41.52136147022247,2,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_70_69,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+337,2,4194,42.02972650527954,2,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_70_70,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+338,2,7597,81.08437061309814,2,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_71_38,Arable land|Transitional woodland/shrub
+339,2,7360,81.52104020118713,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_71_50,Broad-leaved forest|Pastures
+340,3,7641,85.39952039718628,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_71_54,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+341,2,4194,41.7364627122879,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_71_70,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+342,1,725,12.916094064712524,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_71_75,Urban fabric
+343,1,2429,29.9810528755188,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_72_28,Pastures
+344,1,5176,52.82827615737915,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_72_30,Transitional woodland/shrub
+345,2,7044,85.96382141113281,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_72_50,Broad-leaved forest|Transitional woodland/shrub
+346,2,7044,82.89037346839905,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_72_68,Broad-leaved forest|Transitional woodland/shrub
+347,1,2888,28.435388207435608,4,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_72_71,"Land principally occupied by agriculture, with significant areas of natural vegetation"
+348,2,6028,63.88569474220276,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_73_26,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation"
+349,2,6894,75.04055500030518,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_73_40,Pastures|Transitional woodland/shrub
+350,1,5176,67.35580563545227,2,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_73_57,Transitional woodland/shrub
+351,1,2888,28.32885980606079,5,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_73_72,"Land principally occupied by agriculture, with significant areas of natural vegetation"
+352,1,3907,53.20371389389038,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_74_26,Arable land
+353,2,7044,85.9110176563263,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_74_65,Broad-leaved forest|Transitional woodland/shrub
+354,1,2888,28.122994303703308,7,False,False,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_74_70,"Land principally occupied by agriculture, with significant areas of natural vegetation"
+355,1,3907,55.44583797454834,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_75_16,Arable land
+356,1,5176,47.90535867214203,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_75_20,Transitional woodland/shrub
+357,1,3907,55.1440954208374,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_75_22,Arable land
+358,3,8075,78.00207138061523,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_75_50,Arable land|Broad-leaved forest|Complex cultivation patterns
+359,2,7597,78.19130420684814,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_76_43,Arable land|Transitional woodland/shrub
+360,4,9139,93.49108934402466,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_76_47,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+361,2,7044,85.65778732299805,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_76_59,Broad-leaved forest|Transitional woodland/shrub
+362,2,4194,42.19687581062317,5,False,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_76_77,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+363,2,6028,66.89643263816833,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_77_15,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation"
+364,2,4201,48.52429926395416,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_77_22,Arable land|Urban fabric
+365,2,6028,66.47776961326599,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_77_27,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation"
+366,4,8152,84.51783657073975,1,True,True,True,S2A_MSIL2A_20171201T112431_N9999_R037_T29SNB_77_49,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+367,5,8983,89.66620564460754,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_13_21,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Natural grassland and sparsely vegetated areas|Pastures|Transitional woodland/shrub"
+368,2,4201,60.821449756622314,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_13_48,Arable land|Urban fabric
+369,3,5227,55.136287212371826,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_13_49,Arable land|Complex cultivation patterns|Urban fabric
+370,3,7641,86.83633208274841,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_13_57,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+371,5,9046,92.46423244476318,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_13_66,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures|Urban fabric"
+372,3,7641,83.65893363952637,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_14_17,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+373,3,6568,70.33971548080444,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_14_18,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Natural grassland and sparsely vegetated areas"
+374,2,6510,71.57151699066162,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_14_32,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+375,3,7659,90.45817255973816,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_14_62,Broad-leaved forest|Mixed forest|Transitional woodland/shrub
+376,5,8413,89.64271545410156,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_14_66,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Natural grassland and sparsely vegetated areas|Pastures|Urban fabric"
+377,4,8228,87.15789914131165,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_14_71,Arable land|Complex cultivation patterns|Transitional woodland/shrub|Urban fabric
+378,3,6181,72.41813540458679,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_14_76,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+379,3,7186,77.00343728065491,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_15_14,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+380,4,9125,95.99714279174805,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_15_15,Broad-leaved forest|Complex cultivation patterns|Pastures|Transitional woodland/shrub
+381,3,8529,80.48421740531921,2,False,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_15_21,Broad-leaved forest|Pastures|Transitional woodland/shrub
+382,2,7044,72.9429841041565,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_15_24,Broad-leaved forest|Transitional woodland/shrub
+383,3,5227,64.14318084716797,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_15_40,Arable land|Complex cultivation patterns|Urban fabric
+384,2,4201,53.100693225860596,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_15_43,Arable land|Urban fabric
+385,2,6505,69.76010203361511,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_15_54,Broad-leaved forest|Complex cultivation patterns
+386,5,9157,93.77995729446411,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_15_75,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub"
+387,3,7186,77.657550573349,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_16_13,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+388,2,4201,56.842511892318726,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_16_45,Arable land|Urban fabric
+389,2,6510,71.50411009788513,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_17_23,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+390,1,5508,58.759015798568726,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_17_24,Broad-leaved forest
+391,3,7864,81.27588033676147,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_17_45,Arable land|Broad-leaved forest|Urban fabric
+392,3,8346,84.23612713813782,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_17_51,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+393,2,7044,77.47232913970947,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_17_66,Broad-leaved forest|Transitional woodland/shrub
+394,5,8128,90.57229161262512,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_17_70,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub"
+395,3,7186,76.67509913444519,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_18_13,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+396,4,8833,83.17378759384155,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_18_20,Broad-leaved forest|Pastures|Transitional woodland/shrub|Urban fabric
+397,2,6505,70.71925401687622,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_18_30,Broad-leaved forest|Complex cultivation patterns
+398,2,6505,71.84334397315979,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_18_65,Broad-leaved forest|Complex cultivation patterns
+399,3,7186,79.45084571838379,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_19_14,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+400,2,6505,73.74749779701233,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_19_67,Broad-leaved forest|Complex cultivation patterns
+401,4,8735,92.42581129074097,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_20_18,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+402,4,8957,86.79696321487427,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_20_37,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures|Transitional woodland/shrub"
+403,2,6510,73.70268702507019,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_20_51,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+404,4,7674,87.09304928779602,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_20_65,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub"
+405,2,6510,75.78758597373962,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_20_72,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+406,2,6510,72.10028171539307,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_20_73,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+407,3,7186,76.09379291534424,2,False,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_21_14,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+408,3,7186,85.73264479637146,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_21_15,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+409,4,8152,87.67659068107605,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_21_17,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+410,5,9377,95.67810893058777,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_21_25,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures|Transitional woodland/shrub"
+411,3,7641,84.75785851478577,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_21_28,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+412,2,6510,67.6625907421112,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_21_41,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+413,2,6510,71.88389301300049,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_21_56,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+414,2,6510,70.7788348197937,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_21_70,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+415,2,6510,74.22821521759033,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_21_72,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+416,4,7674,85.71699857711792,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_22_32,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub"
+417,1,5508,62.759679555892944,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_22_41,Broad-leaved forest
+418,2,6510,69.00310516357422,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_22_56,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+419,4,8568,88.46221566200256,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_23_13,"Arable land|Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+420,3,7641,89.9052381515503,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_23_75,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+421,4,8735,91.64978861808777,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_24_15,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+422,4,8152,89.75763320922852,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_24_18,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+423,4,9003,87.93750405311584,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_25_14,Arable land|Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub
+424,4,8152,90.37048816680908,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_25_15,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+425,3,7641,88.48302960395813,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_25_71,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+426,3,7641,88.18259239196777,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_26_17,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+427,2,7044,77.7506947517395,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_26_75,Broad-leaved forest|Transitional woodland/shrub
+428,4,8152,88.53689432144165,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_26_77,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+429,4,7227,85.96217036247253,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_28_71,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Natural grassland and sparsely vegetated areas"
+430,3,7186,76.6103208065033,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_29_13,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+431,3,7641,83.14371705055237,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_29_18,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+432,2,6510,82.1517825126648,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_30_73,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+433,2,6510,79.59828972816467,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_31_14,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+434,3,7334,82.40042328834534,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_31_74,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+435,4,8294,89.03303146362305,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_31_76,Broad-leaved forest|Complex cultivation patterns|Mixed forest|Transitional woodland/shrub
+436,4,8152,86.01425886154175,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_32_22,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+437,3,6547,79.55754399299622,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_32_70,"Land principally occupied by agriculture, with significant areas of natural vegetation|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub"
+438,3,7641,87.53879070281982,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_32_72,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+439,6,9284,95.07859349250793,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_32_77,"Arable land|Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub"
+440,4,9139,90.70979356765747,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_35_76,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+441,1,5508,67.82092452049255,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_36_15,Broad-leaved forest
+442,4,9003,93.453049659729,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_36_76,Arable land|Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub
+443,3,7641,84.79443788528442,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_37_69,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+444,4,8152,91.38970375061035,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_39_13,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+445,2,6510,70.343679189682,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_39_18,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+446,3,7186,76.91949009895325,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_40_13,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+447,3,7641,87.34413981437683,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_40_20,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+448,2,6510,69.35554146766663,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_41_17,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+449,3,7641,86.40702366828918,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_41_21,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+450,3,5227,63.60599398612976,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_41_74,Arable land|Complex cultivation patterns|Urban fabric
+451,4,8152,84.67011451721191,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_42_14,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+452,2,7044,82.3179841041565,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_42_15,Broad-leaved forest|Transitional woodland/shrub
+453,1,5508,63.30477595329285,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_43_15,Broad-leaved forest
+454,4,8294,93.07954907417297,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_44_21,Broad-leaved forest|Complex cultivation patterns|Mixed forest|Transitional woodland/shrub
+455,6,9312,93.93006563186646,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_45_69,"Arable land|Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub|Urban fabric"
+456,6,8793,94.56276893615723,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_46_18,"Broad-leaved forest|Complex cultivation patterns|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+457,5,8783,92.86938309669495,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_47_14,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub|Urban fabric"
+458,5,8927,87.73581385612488,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_47_73,Arable land|Broad-leaved forest|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub|Urban fabric
+459,5,9271,94.7284996509552,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_48_22,"Arable land|Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+460,6,9582,97.34780192375183,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_48_71,"Arable land|Broad-leaved forest|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub"
+461,3,7186,76.30845904350281,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_49_17,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+462,2,6028,72.31837511062622,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_49_19,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation"
+463,2,6028,69.38393712043762,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_49_20,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation"
+464,3,7086,85.56087613105774,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_49_70,Broad-leaved forest|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub
+465,3,6606,71.97038531303406,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_50_19,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+466,6,9471,95.1450765132904,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_50_71,Arable land|Broad-leaved forest|Coniferous forest|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub|Urban fabric
+467,4,9003,92.04952716827393,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_51_20,Arable land|Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub
+468,3,8529,92.9963231086731,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_51_70,Broad-leaved forest|Pastures|Transitional woodland/shrub
+469,2,7360,77.2433340549469,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_51_74,Broad-leaved forest|Pastures
+470,3,7659,85.6164038181305,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_51_76,Broad-leaved forest|Mixed forest|Transitional woodland/shrub
+471,3,7778,81.89143538475037,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_53_14,Arable land|Transitional woodland/shrub|Urban fabric
+472,5,8983,89.82775211334229,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_53_71,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Natural grassland and sparsely vegetated areas|Pastures|Transitional woodland/shrub"
+473,2,7044,80.92901110649109,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_53_74,Broad-leaved forest|Transitional woodland/shrub
+474,1,3907,55.31979203224182,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_54_13,Arable land
+475,4,8735,92.08635687828064,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_54_21,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+476,3,6606,75.5569577217102,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_54_22,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+477,3,7086,79.71023917198181,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_54_71,Broad-leaved forest|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub
+478,2,7597,82.9089105129242,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_55_21,Arable land|Transitional woodland/shrub
+479,3,7086,76.14113092422485,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_55_71,Broad-leaved forest|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub
+480,4,8971,90.59686660766602,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_55_75,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+481,5,8783,91.14893674850464,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_56_15,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub|Urban fabric"
+482,2,7044,80.09339570999146,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_57_69,Broad-leaved forest|Transitional woodland/shrub
+483,1,3907,61.104077100753784,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_58_15,Arable land
+484,2,5581,70.42704820632935,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_58_70,Broad-leaved forest|Natural grassland and sparsely vegetated areas
+485,3,6906,77.46988534927368,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_58_74,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures"
+486,3,6606,70.82343101501465,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_58_76,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+487,5,9207,91.98376536369324,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_59_14,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub|Urban fabric"
+488,3,6606,71.2087333202362,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_59_19,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+489,4,8152,86.38240098953247,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_59_21,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+490,2,5089,69.07735466957092,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_60_18,Arable land|Complex cultivation patterns
+491,3,5227,63.48622441291809,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_60_19,Arable land|Complex cultivation patterns|Urban fabric
+492,4,6687,76.64081454277039,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_60_74,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+493,4,8958,93.85133981704712,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_61_15,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures"
+494,5,8629,89.27759528160095,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_61_22,"Arable land|Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+495,4,6687,79.55704927444458,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_61_76,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+496,4,8515,86.883145570755,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_62_19,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub"
+497,5,9564,92.45853424072266,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_63_16,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures|Transitional woodland/shrub"
+498,4,8152,86.30387783050537,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_63_69,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+499,3,6606,71.39249444007874,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_63_75,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+500,5,9271,94.56202983856201,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_64_72,"Arable land|Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+501,3,6606,75.83471536636353,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_64_75,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+502,5,9271,94.56695914268494,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_65_16,"Arable land|Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+503,2,6510,78.13220024108887,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_65_17,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+504,4,8100,88.83461356163025,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_66_17,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+505,1,5508,62.65673041343689,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_69_15,Broad-leaved forest
+506,1,5508,59.819960594177246,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_69_16,Broad-leaved forest
+507,5,8371,92.0986533164978,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_69_20,"Broad-leaved forest|Complex cultivation patterns|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+508,5,8371,93.50341558456421,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_69_21,"Broad-leaved forest|Complex cultivation patterns|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+509,3,7186,75.92750191688538,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_69_44,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+510,2,6510,75.74548721313477,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_69_46,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+511,5,9271,93.48177313804626,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_70_28,"Arable land|Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+512,4,6687,71.99046611785889,2,False,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_70_34,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+513,4,8957,88.19462060928345,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_70_76,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures|Transitional woodland/shrub"
+514,4,8681,84.26461219787598,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_71_53,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures"
+515,3,7186,77.94739603996277,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_71_71,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+516,3,8120,78.25567126274109,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_71_72,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures"
+517,2,6510,78.11086177825928,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_71_73,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+518,2,7044,80.186927318573,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_71_76,Broad-leaved forest|Transitional woodland/shrub
+519,2,6028,64.96424674987793,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_72_36,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation"
+520,3,5227,56.69929385185242,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_72_37,Arable land|Complex cultivation patterns|Urban fabric
+521,4,8152,87.8258764743805,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_72_56,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+522,3,7186,74.24174547195435,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_73_13,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+523,2,6505,73.71622323989868,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_73_31,Broad-leaved forest|Complex cultivation patterns
+524,2,5089,65.20262360572815,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_73_35,Arable land|Complex cultivation patterns
+525,3,7641,84.69956517219543,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_73_40,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+526,2,6505,67.47968792915344,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_73_44,Broad-leaved forest|Complex cultivation patterns
+527,4,8152,91.25528931617737,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_74_15,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+528,2,6510,70.92255353927612,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_74_19,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+529,3,7186,79.31419610977173,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_74_45,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+530,3,7641,84.4900369644165,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_74_47,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+531,4,8151,91.25155210494995,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_75_21,"Broad-leaved forest|Complex cultivation patterns|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+532,3,7746,85.3355884552002,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_75_25,Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub
+533,2,6505,69.50505375862122,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_75_26,Broad-leaved forest|Complex cultivation patterns
+534,2,6505,71.21801376342773,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_75_29,Broad-leaved forest|Complex cultivation patterns
+535,3,7186,83.5665225982666,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_75_31,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+536,3,7130,82.4084222316742,2,False,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_75_63,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+537,2,7360,67.99761652946472,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_75_66,Broad-leaved forest|Pastures
+538,2,7360,69.53256130218506,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_75_68,Broad-leaved forest|Pastures
+539,3,7186,81.73757195472717,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_76_19,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+540,3,8220,87.54214644432068,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_76_26,Broad-leaved forest|Complex cultivation patterns|Pastures
+541,4,8152,86.09010577201843,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_76_37,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+542,2,6505,67.0826256275177,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_76_50,Broad-leaved forest|Complex cultivation patterns
+543,2,7044,80.69909811019897,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_76_68,Broad-leaved forest|Transitional woodland/shrub
+544,2,7044,75.08805394172668,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_76_77,Broad-leaved forest|Transitional woodland/shrub
+545,3,7186,83.08483958244324,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_77_32,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+546,2,6510,76.29320025444031,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_77_38,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+547,4,7379,76.78909301757812,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_77_47,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+548,3,7186,74.72342848777771,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_77_57,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+549,2,7044,78.18390727043152,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_77_68,Broad-leaved forest|Transitional woodland/shrub
+550,3,7086,81.10402822494507,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_77_76,Broad-leaved forest|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub
+551,2,7044,77.3440957069397,1,True,True,True,S2A_MSIL2A_20171208T093351_N9999_R136_T34TEN_77_77,Broad-leaved forest|Transitional woodland/shrub
+552,3,4420,46.016985177993774,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_13_14,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+553,2,2470,27.563050389289856,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_13_17,Complex cultivation patterns|Natural grassland and sparsely vegetated areas
+554,2,6487,69.57821249961853,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_13_21,Complex cultivation patterns|Transitional woodland/shrub
+555,4,5699,55.1609992980957,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_13_29,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Urban fabric"
+556,3,8789,90.4219925403595,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_13_36,Arable land|Broad-leaved forest|Transitional woodland/shrub
+557,5,8110,86.69424057006836,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_13_59,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Urban fabric"
+558,2,4201,46.24547064304352,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_13_70,Arable land|Urban fabric
+559,3,7270,81.10314607620239,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_14_21,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+560,3,7746,78.5027265548706,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_14_35,Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub
+561,4,8568,88.4232223033905,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_14_38,"Arable land|Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+562,4,8735,89.78543281555176,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_14_48,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+563,2,4194,42.950671911239624,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_14_52,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+564,3,4420,43.95533502101898,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_14_55,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+565,5,9172,91.90824627876282,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_14_56,"Arable land|Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+566,1,3907,47.431063652038574,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_14_69,Arable land
+567,3,6827,73.29480051994324,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_15_16,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub|Urban fabric"
+568,2,4194,47.510141134262085,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_15_21,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+569,3,4420,52.9822051525116,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_15_43,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+570,3,8075,84.80390310287476,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_15_56,Arable land|Broad-leaved forest|Complex cultivation patterns
+571,2,7597,79.25764322280884,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_15_60,Arable land|Transitional woodland/shrub
+572,1,3907,57.97109007835388,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_15_62,Arable land
+573,1,3907,48.51031303405762,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_15_63,Arable land
+574,2,6028,71.16739749908447,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_15_70,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation"
+575,1,2888,29.181918501853943,20,False,False,False,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_16_17,"Land principally occupied by agriculture, with significant areas of natural vegetation"
+576,3,6827,69.68274116516113,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_16_18,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub|Urban fabric"
+577,2,4194,41.53098165988922,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_16_22,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation"
+578,4,5699,52.36116051673889,3,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_16_27,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Urban fabric"
+579,3,8506,84.40696597099304,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_16_58,Arable land|Broad-leaved forest|Mixed forest
+580,3,5363,75.11762976646423,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_16_62,Arable land|Pastures|Urban fabric
+581,2,5089,65.63444137573242,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_16_71,Arable land|Complex cultivation patterns
+582,1,3907,49.55936670303345,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_17_63,Arable land
+583,1,2888,27.387821674346924,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_18_23,"Land principally occupied by agriculture, with significant areas of natural vegetation"
+584,3,5227,51.47826075553894,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_18_40,Arable land|Complex cultivation patterns|Urban fabric
+585,2,5089,62.624919414520264,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_18_43,Arable land|Complex cultivation patterns
+586,5,7614,74.22153353691101,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_18_49,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Urban fabric"
+587,4,8744,88.09635043144226,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_18_62,Arable land|Complex cultivation patterns|Mixed forest|Transitional woodland/shrub
+588,2,7044,84.0419352054596,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_19_16,Broad-leaved forest|Transitional woodland/shrub
+589,3,4420,43.268632888793945,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_19_21,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+590,1,2888,28.647971153259277,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_19_24,"Land principally occupied by agriculture, with significant areas of natural vegetation"
+591,4,7501,77.99733281135559,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_19_28,Complex cultivation patterns|Mixed forest|Transitional woodland/shrub|Urban fabric
+592,4,8735,90.337735414505,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_19_36,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+593,5,9024,89.51677083969116,5,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_19_62,Arable land|Complex cultivation patterns|Coniferous forest|Mixed forest|Transitional woodland/shrub
+594,1,2888,26.511558890342712,6,False,False,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_20_23,"Land principally occupied by agriculture, with significant areas of natural vegetation"
+595,6,9588,96.80565595626831,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_20_28,"Arable land|Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+596,3,4420,46.8672513961792,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_20_46,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+597,3,6274,59.015315771102905,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_20_50,Arable land|Complex cultivation patterns|Mixed forest
+598,2,7680,79.07950282096863,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_20_67,Arable land|Broad-leaved forest
+599,3,7278,76.82216763496399,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_20_69,Complex cultivation patterns|Coniferous forest|Transitional woodland/shrub
+600,1,3907,36.923450231552124,7,False,False,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_20_74,Arable land
+601,1,2888,30.747541785240173,5,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_21_24,"Land principally occupied by agriculture, with significant areas of natural vegetation"
+602,4,8778,89.62014317512512,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_21_70,Arable land|Complex cultivation patterns|Coniferous forest|Transitional woodland/shrub
+603,4,7450,76.1446475982666,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_22_15,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub|Urban fabric"
+604,3,6827,77.67860889434814,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_22_21,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub|Urban fabric"
+605,3,7778,77.06665992736816,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_22_26,Arable land|Transitional woodland/shrub|Urban fabric
+606,4,8570,88.65377306938171,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_22_29,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub|Urban fabric"
+607,3,6827,75.48335194587708,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_22_30,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub|Urban fabric"
+608,3,7058,68.84652376174927,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_22_32,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+609,1,5176,63.606029748916626,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_23_17,Transitional woodland/shrub
+610,4,7954,86.93975806236267,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_24_19,Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub|Urban fabric
+611,3,7204,75.83198547363281,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_26_21,"Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+612,4,9239,93.98157596588135,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_26_72,Arable land|Broad-leaved forest|Mixed forest|Transitional woodland/shrub
+613,2,6493,74.55779910087585,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_28_14,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+614,2,5711,66.73352122306824,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_28_16,Transitional woodland/shrub|Urban fabric
+615,3,4420,49.14647936820984,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_29_20,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+616,3,8529,94.18599605560303,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_29_69,Broad-leaved forest|Pastures|Transitional woodland/shrub
+617,3,8075,84.20588374137878,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_29_76,Arable land|Broad-leaved forest|Complex cultivation patterns
+618,1,2888,27.1453857421875,4,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_30_21,"Land principally occupied by agriculture, with significant areas of natural vegetation"
+619,2,7680,80.05763292312622,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_30_74,Arable land|Broad-leaved forest
+620,4,8808,93.95678639411926,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_31_76,Arable land|Broad-leaved forest|Complex cultivation patterns|Pastures
+621,3,8506,86.0187292098999,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_32_71,Arable land|Broad-leaved forest|Mixed forest
+622,3,8708,87.38958239555359,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_32_72,Arable land|Broad-leaved forest|Coniferous forest
+623,5,9559,95.8479106426239,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_32_73,Arable land|Broad-leaved forest|Complex cultivation patterns|Coniferous forest|Transitional woodland/shrub
+624,4,7948,86.13537549972534,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_33_70,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+625,2,4094,42.57402420043945,13,False,False,False,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_34_19,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+626,4,6687,67.89301633834839,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_34_71,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+627,3,4420,45.31891644001007,8,False,False,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_35_17,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+628,3,4956,47.292739152908325,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_35_20,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+629,3,8789,89.6791160106659,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_35_76,Arable land|Broad-leaved forest|Transitional woodland/shrub
+630,5,9422,95.77282667160034,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_36_76,Arable land|Broad-leaved forest|Complex cultivation patterns|Mixed forest|Transitional woodland/shrub
+631,3,6274,60.98760962486267,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_37_77,Arable land|Complex cultivation patterns|Mixed forest
+632,3,7270,80.73610663414001,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_38_16,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+633,2,2600,37.13773488998413,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_38_21,Complex cultivation patterns|Urban fabric
+634,2,6118,63.2066011428833,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_38_77,Mixed forest|Transitional woodland/shrub
+635,3,5507,53.09361815452576,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_39_15,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+636,1,725,6.796438992023468,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_39_20,Urban fabric
+637,4,7379,85.73086261749268,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_40_17,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+638,5,9721,97.15521931648254,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_40_76,Arable land|Broad-leaved forest|Mixed forest|Pastures|Transitional woodland/shrub
+639,3,6351,65.25307893753052,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_41_69,Arable land|Mixed forest|Pastures
+640,2,5105,56.933099031448364,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_41_70,Arable land|Pastures
+641,4,9352,93.46243739128113,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_41_71,Arable land|Broad-leaved forest|Coniferous forest|Transitional woodland/shrub
+642,5,9422,95.47482132911682,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_42_19,Arable land|Broad-leaved forest|Complex cultivation patterns|Mixed forest|Transitional woodland/shrub
+643,3,7286,80.26897311210632,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_42_21,Complex cultivation patterns|Mixed forest|Transitional woodland/shrub
+644,4,8944,90.81938862800598,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_42_75,Arable land|Broad-leaved forest|Coniferous forest|Mixed forest
+645,4,8294,90.20758867263794,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_43_21,Broad-leaved forest|Complex cultivation patterns|Mixed forest|Transitional woodland/shrub
+646,5,9707,96.67924642562866,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_43_70,Arable land|Broad-leaved forest|Coniferous forest|Pastures|Transitional woodland/shrub
+647,3,7140,82.14386701583862,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_45_71,Broad-leaved forest|Coniferous forest|Mixed forest
+648,2,6505,77.8801441192627,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_47_15,Broad-leaved forest|Complex cultivation patterns
+649,2,6118,66.41224026679993,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_47_20,Mixed forest|Transitional woodland/shrub
+650,3,7204,77.47583985328674,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_49_19,"Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+651,2,6493,74.46765899658203,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_49_21,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+652,2,6510,72.21180200576782,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_50_17,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+653,4,8177,92.93893575668335,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_51_17,"Broad-leaved forest|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+654,3,7746,87.96811699867249,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_53_18,Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub
+655,3,8506,86.5787923336029,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_53_77,Arable land|Broad-leaved forest|Mixed forest
+656,2,6493,70.62662243843079,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_54_13,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+657,2,6589,78.93580794334412,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_54_73,Broad-leaved forest|Mixed forest
+658,3,7746,85.01307964324951,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_55_17,Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub
+659,1,5508,74.68529343605042,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_55_77,Broad-leaved forest
+660,2,6487,75.48352479934692,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_56_16,Complex cultivation patterns|Transitional woodland/shrub
+661,2,7044,74.20011162757874,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_56_20,Broad-leaved forest|Transitional woodland/shrub
+662,2,7044,84.06417965888977,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_57_13,Broad-leaved forest|Transitional woodland/shrub
+663,4,7441,81.2562346458435,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_57_16,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub|Urban fabric"
+664,1,5508,72.53180742263794,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_57_69,Broad-leaved forest
+665,3,8789,92.15332865715027,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_57_71,Arable land|Broad-leaved forest|Transitional woodland/shrub
+666,3,8789,90.57580232620239,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_57_72,Arable land|Broad-leaved forest|Transitional woodland/shrub
+667,1,5508,71.23408913612366,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_58_77,Broad-leaved forest
+668,2,6118,67.12574362754822,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_59_13,Mixed forest|Transitional woodland/shrub
+669,1,3907,45.81860303878784,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_59_72,Arable land
+670,2,4357,46.34242355823517,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_60_20,"Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+671,3,7641,83.29392075538635,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_60_22,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+672,2,5997,73.55031967163086,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_61_13,Coniferous forest|Transitional woodland/shrub
+673,4,7949,90.67944288253784,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_61_17,Broad-leaved forest|Coniferous forest|Mixed forest|Transitional woodland/shrub
+674,3,7140,81.43520951271057,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_61_69,Broad-leaved forest|Coniferous forest|Mixed forest
+675,3,7140,79.07386422157288,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_61_70,Broad-leaved forest|Coniferous forest|Mixed forest
+676,1,3907,32.31293857097626,4,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_62_75,Arable land
+677,3,7130,79.6488344669342,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_63_16,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+678,3,8506,86.89991235733032,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_64_69,Arable land|Broad-leaved forest|Mixed forest
+679,2,6487,75.09690523147583,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_65_15,Complex cultivation patterns|Transitional woodland/shrub
+680,3,7130,81.94673657417297,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_65_17,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+681,3,7270,77.86567807197571,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_66_16,"Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+682,2,7044,80.43802976608276,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_67_19,Broad-leaved forest|Transitional woodland/shrub
+683,2,6493,78.21967005729675,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_67_21,"Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+684,1,1907,21.896660327911377,4,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_67_70,Mixed forest
+685,1,2429,19.940052926540375,22,False,False,False,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_67_77,Pastures
+686,2,7044,78.58628630638123,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_68_13,Broad-leaved forest|Transitional woodland/shrub
+687,3,8789,90.4755711555481,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_69_44,Arable land|Broad-leaved forest|Transitional woodland/shrub
+688,2,7044,86.56649589538574,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_69_53,Broad-leaved forest|Transitional woodland/shrub
+689,2,7044,83.28062295913696,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_69_54,Broad-leaved forest|Transitional woodland/shrub
+690,1,3907,36.30629479885101,4,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_69_72,Arable land
+691,2,7680,76.41202211380005,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_69_74,Arable land|Broad-leaved forest
+692,2,5997,65.78211784362793,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_70_20,Coniferous forest|Transitional woodland/shrub
+693,2,7680,78.53370904922485,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_70_42,Arable land|Broad-leaved forest
+694,2,4201,58.94838571548462,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_70_45,Arable land|Urban fabric
+695,1,725,23.4344020485878,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_70_46,Urban fabric
+696,3,8789,91.92467331886292,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_70_57,Arable land|Broad-leaved forest|Transitional woodland/shrub
+697,1,5508,67.3721969127655,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_70_62,Broad-leaved forest
+698,3,8789,91.24333262443542,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_70_65,Arable land|Broad-leaved forest|Transitional woodland/shrub
+699,4,7450,79.15864586830139,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_71_16,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub|Urban fabric"
+700,4,9239,92.40784049034119,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_71_29,Arable land|Broad-leaved forest|Mixed forest|Transitional woodland/shrub
+701,4,9139,95.21345496177673,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_71_39,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+702,3,7641,91.72748327255249,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_71_47,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+703,2,7044,87.34313249588013,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_71_53,Broad-leaved forest|Transitional woodland/shrub
+704,3,8708,85.6771469116211,3,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_71_56,Arable land|Broad-leaved forest|Coniferous forest
+705,1,5508,72.45575189590454,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_71_63,Broad-leaved forest
+706,2,7597,72.58263826370239,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_71_75,Arable land|Transitional woodland/shrub
+707,1,5176,66.85624122619629,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_72_14,Transitional woodland/shrub
+708,2,7044,85.63863039016724,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_72_18,Broad-leaved forest|Transitional woodland/shrub
+709,2,6510,69.65561509132385,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_72_24,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+710,4,7948,86.5307867527008,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_72_35,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+711,5,8110,89.59603309631348,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_72_37,"Broad-leaved forest|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Urban fabric"
+712,3,7641,89.3012285232544,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_72_49,"Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+713,2,5105,50.45701265335083,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_72_55,Arable land|Pastures
+714,1,5508,70.70974111557007,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_72_66,Broad-leaved forest
+715,3,8789,92.46275424957275,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_72_67,Arable land|Broad-leaved forest|Transitional woodland/shrub
+716,3,8472,90.9420371055603,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_72_71,Arable land|Broad-leaved forest|Pastures
+717,2,5105,58.4186851978302,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_73_71,Arable land|Pastures
+718,4,8294,90.9026563167572,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_74_25,Broad-leaved forest|Complex cultivation patterns|Mixed forest|Transitional woodland/shrub
+719,4,8294,91.43766760826111,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_74_30,Broad-leaved forest|Complex cultivation patterns|Mixed forest|Transitional woodland/shrub
+720,3,8789,91.82927012443542,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_74_58,Arable land|Broad-leaved forest|Transitional woodland/shrub
+721,1,3907,35.53963899612427,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_74_63,Arable land
+722,2,7044,80.81430792808533,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_74_66,Broad-leaved forest|Transitional woodland/shrub
+723,3,8789,90.53207039833069,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_74_68,Arable land|Broad-leaved forest|Transitional woodland/shrub
+724,2,7597,78.30607891082764,3,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_74_69,Arable land|Transitional woodland/shrub
+725,1,5176,49.80637729167938,3,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_75_15,Transitional woodland/shrub
+726,3,7058,66.05143547058105,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_75_35,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+727,2,7680,78.9624810218811,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_75_40,Arable land|Broad-leaved forest
+728,3,8346,86.75907254219055,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_75_44,"Arable land|Broad-leaved forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+729,6,9695,97.91820645332336,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_75_49,"Arable land|Broad-leaved forest|Complex cultivation patterns|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Transitional woodland/shrub"
+730,3,8472,85.65057516098022,2,False,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_75_56,Arable land|Broad-leaved forest|Pastures
+731,2,7044,81.84879422187805,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_75_69,Broad-leaved forest|Transitional woodland/shrub
+732,3,7746,80.98547458648682,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_76_16,Broad-leaved forest|Complex cultivation patterns|Transitional woodland/shrub
+733,4,8294,91.17593765258789,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_76_28,Broad-leaved forest|Complex cultivation patterns|Mixed forest|Transitional woodland/shrub
+734,2,6118,74.15350675582886,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_76_35,Mixed forest|Transitional woodland/shrub
+735,2,5581,77.50610709190369,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_76_37,Broad-leaved forest|Natural grassland and sparsely vegetated areas
+736,3,6655,79.85697388648987,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_76_38,Broad-leaved forest|Mixed forest|Natural grassland and sparsely vegetated areas
+737,2,7044,82.68848061561584,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_76_42,Broad-leaved forest|Transitional woodland/shrub
+738,3,8529,92.19534397125244,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_76_68,Broad-leaved forest|Pastures|Transitional woodland/shrub
+739,2,7597,77.19886898994446,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_76_77,Arable land|Transitional woodland/shrub
+740,1,5176,49.06252920627594,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_77_19,Transitional woodland/shrub
+741,4,8974,91.69623851776123,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_77_32,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+742,2,6505,75.74292421340942,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_77_49,Broad-leaved forest|Complex cultivation patterns
+743,2,7597,79.27181124687195,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_77_66,Arable land|Transitional woodland/shrub
+744,1,5508,53.88529300689697,1,True,True,True,S2A_MSIL2A_20171221T112501_N9999_R037_T29SND_77_72,Broad-leaved forest
+745,2,5997,66.65959358215332,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_13_21,Coniferous forest|Transitional woodland/shrub
+746,2,2682,43.12666356563568,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_13_32,Coniferous forest|Mixed forest
+747,1,1526,45.486798882484436,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_13_33,Coniferous forest
+748,4,7508,84.39483046531677,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_13_47,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+749,3,4956,64.8461401462555,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_13_59,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+750,2,6118,69.87617015838623,2,False,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_14_70,Mixed forest|Transitional woodland/shrub
+751,2,5997,70.69998383522034,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_15_18,Coniferous forest|Transitional woodland/shrub
+752,1,1526,45.57473659515381,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_15_33,Coniferous forest
+753,2,2682,44.56792175769806,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_15_34,Coniferous forest|Mixed forest
+754,2,2682,44.905003905296326,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_15_46,Coniferous forest|Mixed forest
+755,3,6509,73.83297681808472,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_16_19,Coniferous forest|Mixed forest|Transitional woodland/shrub
+756,3,6509,74.13979768753052,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_16_30,Coniferous forest|Mixed forest|Transitional woodland/shrub
+757,1,1526,45.51891088485718,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_17_13,Coniferous forest
+758,2,4094,63.95081281661987,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_17_16,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+759,1,1526,45.48691809177399,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_19_18,Coniferous forest
+760,1,1526,46.3278204202652,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_19_20,Coniferous forest
+761,2,4094,62.98710107803345,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_19_32,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation"
+762,4,7508,86.30229234695435,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_20_77,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+763,2,5997,71.30200266838074,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_21_24,Coniferous forest|Transitional woodland/shrub
+764,1,1526,49.929893016815186,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_21_25,Coniferous forest
+765,3,6509,74.82331991195679,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_21_32,Coniferous forest|Mixed forest|Transitional woodland/shrub
+766,2,2682,41.487276554107666,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_21_72,Coniferous forest|Mixed forest
+767,3,6509,72.75683283805847,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_22_19,Coniferous forest|Mixed forest|Transitional woodland/shrub
+768,2,5997,67.90595054626465,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_23_15,Coniferous forest|Transitional woodland/shrub
+769,2,2682,43.16340684890747,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_26_17,Coniferous forest|Mixed forest
+770,3,6509,74.9787449836731,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_26_19,Coniferous forest|Mixed forest|Transitional woodland/shrub
+771,2,2682,42.62853562831879,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_28_14,Coniferous forest|Mixed forest
+772,1,1526,47.78519570827484,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_28_22,Coniferous forest
+773,3,6509,75.06498694419861,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_28_75,Coniferous forest|Mixed forest|Transitional woodland/shrub
+774,1,1526,40.76562225818634,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_29_13,Coniferous forest
+775,1,1526,47.02673554420471,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_29_21,Coniferous forest
+776,2,2682,42.0360803604126,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_31_22,Coniferous forest|Mixed forest
+777,4,7508,81.19333982467651,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_32_74,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+778,2,2682,43.55907440185547,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_33_15,Coniferous forest|Mixed forest
+779,3,6509,74.13728833198547,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_33_77,Coniferous forest|Mixed forest|Transitional woodland/shrub
+780,2,2682,45.102062821388245,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_34_14,Coniferous forest|Mixed forest
+781,2,2682,43.81985068321228,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_34_15,Coniferous forest|Mixed forest
+782,1,1526,44.16932761669159,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_34_21,Coniferous forest
+783,2,2682,42.97773540019989,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_38_13,Coniferous forest|Mixed forest
+784,4,7508,83.03386569023132,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_41_16,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+785,3,4956,66.00278615951538,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_42_71,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+786,3,4956,65.30908942222595,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_43_16,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+787,2,2682,43.77981126308441,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_43_72,Coniferous forest|Mixed forest
+788,2,2682,43.74086558818817,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_46_13,Coniferous forest|Mixed forest
+789,4,7508,84.55475568771362,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_47_72,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+790,4,7508,85.16496419906616,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_48_13,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+791,3,6509,71.97283506393433,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_51_22,Coniferous forest|Mixed forest|Transitional woodland/shrub
+792,4,7499,78.64493727684021,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_51_73,"Arable land|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+793,3,5870,57.25659132003784,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_52_70,Arable land|Coniferous forest|Mixed forest
+794,2,2682,41.92562699317932,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_57_22,Coniferous forest|Mixed forest
+795,3,4956,64.2881989479065,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_58_15,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+796,3,6509,72.83049821853638,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_58_21,Coniferous forest|Mixed forest|Transitional woodland/shrub
+797,3,6509,74.5932936668396,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_59_13,Coniferous forest|Mixed forest|Transitional woodland/shrub
+798,2,2682,39.66608941555023,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_59_74,Coniferous forest|Mixed forest
+799,2,2682,45.47618329524994,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_62_70,Coniferous forest|Mixed forest
+800,5,7811,85.512775182724,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_62_77,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub|Urban fabric"
+801,2,2682,45.31346559524536,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_65_71,Coniferous forest|Mixed forest
+802,3,6509,70.11210322380066,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_66_75,Coniferous forest|Mixed forest|Transitional woodland/shrub
+803,2,2682,42.77833104133606,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_67_76,Coniferous forest|Mixed forest
+804,2,2682,43.330660462379456,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_69_14,Coniferous forest|Mixed forest
+805,4,7508,83.77547860145569,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_69_26,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+806,3,6509,74.11012649536133,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_69_69,Coniferous forest|Mixed forest|Transitional woodland/shrub
+807,2,2682,41.75654053688049,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_70_13,Coniferous forest|Mixed forest
+808,3,5870,57.202041149139404,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_70_64,Arable land|Coniferous forest|Mixed forest
+809,2,2682,44.120749831199646,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_70_76,Coniferous forest|Mixed forest
+810,3,4956,62.428879737854004,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_71_20,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest"
+811,3,6509,72.63281345367432,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_71_61,Coniferous forest|Mixed forest|Transitional woodland/shrub
+812,4,7508,82.66827464103699,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_72_21,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+813,2,5997,68.28329563140869,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_72_50,Coniferous forest|Transitional woodland/shrub
+814,3,6509,74.77146983146667,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_73_61,Coniferous forest|Mixed forest|Transitional woodland/shrub
+815,2,5997,65.41010737419128,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_75_14,Coniferous forest|Transitional woodland/shrub
+816,3,6509,71.71632051467896,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_76_27,Coniferous forest|Mixed forest|Transitional woodland/shrub
+817,2,2682,44.28747892379761,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_76_28,Coniferous forest|Mixed forest
+818,2,2682,38.243886828422546,2,False,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_76_38,Coniferous forest|Mixed forest
+819,2,2682,44.97029483318329,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_76_48,Coniferous forest|Mixed forest
+820,2,2682,42.97233521938324,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_76_55,Coniferous forest|Mixed forest
+821,2,2682,44.54306662082672,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_76_58,Coniferous forest|Mixed forest
+822,3,6509,74.94195103645325,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_76_62,Coniferous forest|Mixed forest|Transitional woodland/shrub
+823,1,1526,43.803590536117554,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_77_14,Coniferous forest
+824,2,2682,40.954235196113586,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_77_44,Coniferous forest|Mixed forest
+825,1,1526,42.32196509838104,1,True,True,True,S2A_MSIL2A_20180205T100211_N9999_R122_T35VLJ_77_60,Coniferous forest
+826,3,6509,66.96672439575195,2,False,True,True,S2A_MSIL2A_20180219T094031_N9999_R036_T35WPP_19_43,Coniferous forest|Mixed forest|Transitional woodland/shrub
+827,1,2429,55.63654899597168,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_13_33,Pastures
+828,1,2429,57.3692262172699,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_13_41,Pastures
+829,3,8472,92.34354496002197,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_13_46,Arable land|Broad-leaved forest|Pastures
+830,2,5105,75.06860494613647,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_13_58,Arable land|Pastures
+831,3,8190,86.00443601608276,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_13_72,Broad-leaved forest|Coniferous forest|Pastures
+832,2,3512,44.28584277629852,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_13_73,Coniferous forest|Pastures
+833,2,3512,49.90081191062927,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_13_77,Coniferous forest|Pastures
+834,3,8293,91.98144674301147,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_14_13,Arable land|Pastures|Transitional woodland/shrub
+835,2,5105,66.81616306304932,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_14_45,Arable land|Pastures
+836,2,5105,77.07285284996033,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_14_48,Arable land|Pastures
+837,2,5105,69.00203824043274,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_14_49,Arable land|Pastures
+838,3,6154,75.6274163722992,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_14_68,Arable land|Complex cultivation patterns|Pastures
+839,3,8293,91.12696647644043,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_15_13,Arable land|Pastures|Transitional woodland/shrub
+840,3,8472,92.62438416481018,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_15_20,Arable land|Broad-leaved forest|Pastures
+841,3,5363,76.24846696853638,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_15_55,Arable land|Pastures|Urban fabric
+842,2,3512,57.83843398094177,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_16_30,Coniferous forest|Pastures
+843,3,7439,80.9033989906311,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_16_31,Coniferous forest|Pastures|Transitional woodland/shrub
+844,2,5105,78.3275842666626,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_16_63,Arable land|Pastures
+845,3,6154,62.32342720031738,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_16_69,Arable land|Complex cultivation patterns|Pastures
+846,4,7235,79.5608639717102,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_17_20,Arable land|Complex cultivation patterns|Mixed forest|Pastures
+847,4,8772,93.21994185447693,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_17_25,Arable land|Complex cultivation patterns|Pastures|Transitional woodland/shrub
+848,3,7439,83.65699052810669,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_17_27,Coniferous forest|Pastures|Transitional woodland/shrub
+849,2,3512,51.980775594711304,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_17_34,Coniferous forest|Pastures
+850,1,2429,61.113548278808594,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_17_43,Pastures
+851,2,5105,75.11311173439026,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_17_56,Arable land|Pastures
+852,2,5105,74.00270104408264,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_17_58,Arable land|Pastures
+853,3,6154,83.31511616706848,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_17_59,Arable land|Complex cultivation patterns|Pastures
+854,3,6154,76.99236273765564,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_17_68,Arable land|Complex cultivation patterns|Pastures
+855,1,2429,30.711179971694946,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_17_75,Pastures
+856,2,5105,76.91441178321838,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_18_13,Arable land|Pastures
+857,3,6154,78.50261330604553,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_18_16,Arable land|Complex cultivation patterns|Pastures
+858,3,6274,66.85822010040283,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_18_17,Arable land|Complex cultivation patterns|Mixed forest
+859,3,8220,89.16785717010498,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_18_65,Broad-leaved forest|Complex cultivation patterns|Pastures
+860,2,4894,47.954002022743225,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_18_74,"Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures"
+861,4,6273,79.60333824157715,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_19_19,Arable land|Complex cultivation patterns|Pastures|Urban fabric
+862,3,6154,80.42163848876953,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_19_23,Arable land|Complex cultivation patterns|Pastures
+863,1,2429,56.79328441619873,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_19_32,Pastures
+864,1,2429,50.60847997665405,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_19_35,Pastures
+865,1,2429,55.617815256118774,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_19_70,Pastures
+866,2,5105,73.10352921485901,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_20_18,Arable land|Pastures
+867,5,9209,96.98057770729065,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_20_23,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures|Transitional woodland/shrub"
+868,3,4494,57.936763763427734,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_20_27,Coniferous forest|Mixed forest|Pastures
+869,1,2429,57.556819915771484,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_20_32,Pastures
+870,2,3512,49.53263700008392,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_20_44,Coniferous forest|Pastures
+871,2,3512,54.45903539657593,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_20_77,Coniferous forest|Pastures
+872,4,8647,82.65380859375,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_21_20,Arable land|Broad-leaved forest|Mixed forest|Urban fabric
+873,2,5105,76.17045640945435,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_21_36,Arable land|Pastures
+874,2,6894,81.28640651702881,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_21_39,Pastures|Transitional woodland/shrub
+875,2,3512,40.30700325965881,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_21_47,Coniferous forest|Pastures
+876,2,3512,54.49313521385193,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_21_50,Coniferous forest|Pastures
+877,2,5105,72.50590324401855,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_21_63,Arable land|Pastures
+878,4,7040,70.46643495559692,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_21_66,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures|Urban fabric"
+879,3,7679,83.72688889503479,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_21_70,Mixed forest|Pastures|Transitional woodland/shrub
+880,1,2429,64.98117446899414,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_22_27,Pastures
+881,3,7439,82.16984868049622,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_22_38,Coniferous forest|Pastures|Transitional woodland/shrub
+882,2,3512,51.96826457977295,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_22_39,Coniferous forest|Pastures
+883,2,3512,37.53737509250641,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_22_41,Coniferous forest|Pastures
+884,1,2429,67.1879231929779,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_22_46,Pastures
+885,1,2429,59.89956855773926,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_22_51,Pastures
+886,1,2429,32.34320878982544,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_22_54,Pastures
+887,2,5105,74.27453398704529,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_22_61,Arable land|Pastures
+888,2,5105,75.4999041557312,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_22_62,Arable land|Pastures
+889,3,5363,80.38272857666016,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_22_64,Arable land|Pastures|Urban fabric
+890,3,8299,85.27610898017883,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_22_68,Broad-leaved forest|Mixed forest|Pastures
+891,3,5745,60.09967923164368,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_22_77,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures"
+892,3,6351,76.29494667053223,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_24_16,Arable land|Mixed forest|Pastures
+893,3,6351,78.08117866516113,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_24_17,Arable land|Mixed forest|Pastures
+894,2,5105,76.77865028381348,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_25_15,Arable land|Pastures
+895,3,6351,78.53608131408691,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_25_18,Arable land|Mixed forest|Pastures
+896,4,7823,83.79995226860046,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_25_70,Coniferous forest|Mixed forest|Pastures|Transitional woodland/shrub
+897,2,3512,48.12242388725281,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_25_72,Coniferous forest|Pastures
+898,2,5105,74.10804033279419,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_26_13,Arable land|Pastures
+899,1,2429,57.792115211486816,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_26_77,Pastures
+900,2,5105,77.82009840011597,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_27_21,Arable land|Pastures
+901,3,5872,63.0218505859375,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_27_72,Complex cultivation patterns|Mixed forest|Pastures
+902,4,7658,78.35655212402344,2,False,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_28_15,Complex cultivation patterns|Coniferous forest|Mixed forest|Transitional woodland/shrub
+903,2,3512,55.40730953216553,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_28_70,Coniferous forest|Pastures
+904,4,6687,68.34608316421509,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_29_22,"Arable land|Complex cultivation patterns|Land principally occupied by agriculture, with significant areas of natural vegetation|Urban fabric"
+905,3,8220,90.48677682876587,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_29_75,Broad-leaved forest|Complex cultivation patterns|Pastures
+906,2,5105,58.74288082122803,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_32_75,Arable land|Pastures
+907,2,5105,77.31894850730896,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_33_17,Arable land|Pastures
+908,4,6273,75.53008794784546,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_33_76,Arable land|Complex cultivation patterns|Pastures|Urban fabric
+909,1,2429,67.39177703857422,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_34_13,Pastures
+910,2,7597,78.41964364051819,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_34_22,Arable land|Transitional woodland/shrub
+911,2,5105,72.33616709709167,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_35_13,Arable land|Pastures
+912,2,5105,78.85527610778809,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_35_21,Arable land|Pastures
+913,3,5981,76.26421451568604,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_36_19,Arable land|Coniferous forest|Pastures
+914,2,5105,73.57914447784424,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_36_72,Arable land|Pastures
+915,1,2429,64.37164545059204,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_37_73,Pastures
+916,2,5105,74.01130199432373,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_37_77,Arable land|Pastures
+917,2,5105,78.5912811756134,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_38_19,Arable land|Pastures
+918,1,2429,67.97975301742554,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_38_72,Pastures
+919,2,5105,74.15157556533813,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_38_75,Arable land|Pastures
+920,2,5105,62.65588402748108,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_39_19,Arable land|Pastures
+921,2,5105,66.29626750946045,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_39_20,Arable land|Pastures
+922,3,8293,90.26105999946594,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_40_15,Arable land|Pastures|Transitional woodland/shrub
+923,2,3512,57.01537728309631,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_40_69,Coniferous forest|Pastures
+924,2,5105,75.45230984687805,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_40_71,Arable land|Pastures
+925,2,5105,75.6510853767395,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_40_75,Arable land|Pastures
+926,1,2429,50.79537034034729,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_42_17,Pastures
+927,4,8996,95.82780003547668,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_43_20,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures|Transitional woodland/shrub"
+928,2,4125,61.2216591835022,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_44_18,Mixed forest|Pastures
+929,3,6154,78.97886633872986,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_44_21,Arable land|Complex cultivation patterns|Pastures
+930,2,5105,76.8944501876831,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_44_74,Arable land|Pastures
+931,1,2429,68.42290163040161,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_45_14,Pastures
+932,3,5363,72.20337390899658,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_45_15,Arable land|Pastures|Urban fabric
+933,3,5363,75.53260922431946,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_45_16,Arable land|Pastures|Urban fabric
+934,5,7489,81.76616430282593,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_45_69,Arable land|Complex cultivation patterns|Coniferous forest|Mixed forest|Pastures
+935,2,5105,71.52993679046631,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_45_74,Arable land|Pastures
+936,2,5105,74.09289479255676,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_46_18,Arable land|Pastures
+937,1,2429,55.530357360839844,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_47_22,Pastures
+938,3,6906,82.4891984462738,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_48_16,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures"
+939,1,2429,42.85610616207123,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_48_20,Pastures
+940,1,2429,58.304280042648315,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_48_76,Pastures
+941,1,2429,70.12831568717957,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_49_77,Pastures
+942,2,3512,37.634655833244324,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_50_20,Coniferous forest|Pastures
+943,2,3512,53.02861928939819,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_51_19,Coniferous forest|Pastures
+944,2,3512,46.92348837852478,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_51_21,Coniferous forest|Pastures
+945,4,7508,79.17123436927795,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_52_15,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Transitional woodland/shrub"
+946,1,2429,44.533419609069824,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_52_73,Pastures
+947,3,6154,75.66726207733154,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_53_75,Arable land|Complex cultivation patterns|Pastures
+948,1,2429,51.809161901474,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_53_77,Pastures
+949,2,4440,63.694560527801514,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_54_75,Complex cultivation patterns|Pastures
+950,3,8472,88.29336166381836,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_55_76,Arable land|Broad-leaved forest|Pastures
+951,2,5105,74.26303625106812,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_57_75,Arable land|Pastures
+952,2,5105,71.64081335067749,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_57_77,Arable land|Pastures
+953,1,256,2.719014883041382,23,False,False,False,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_59_18,Natural grassland and sparsely vegetated areas
+954,3,8472,92.16415286064148,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_59_76,Arable land|Broad-leaved forest|Pastures
+955,2,5997,70.43507099151611,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_61_14,Coniferous forest|Transitional woodland/shrub
+956,3,6082,71.56165838241577,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_61_15,Coniferous forest|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub
+957,2,5272,64.95053768157959,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_61_16,Natural grassland and sparsely vegetated areas|Transitional woodland/shrub
+958,2,1757,13.184942305088043,5,False,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_62_16,Coniferous forest|Natural grassland and sparsely vegetated areas
+959,2,5105,61.181098222732544,2,False,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_62_76,Arable land|Pastures
+960,2,1757,14.113135635852814,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_63_16,Coniferous forest|Natural grassland and sparsely vegetated areas
+961,2,5997,69.08024549484253,2,False,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_64_13,Coniferous forest|Transitional woodland/shrub
+962,3,6082,70.16313076019287,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_66_13,Coniferous forest|Natural grassland and sparsely vegetated areas|Transitional woodland/shrub
+963,3,6906,80.08264899253845,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_66_75,"Arable land|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures"
+964,3,4223,42.920610308647156,3,False,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_67_13,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Natural grassland and sparsely vegetated areas"
+965,1,5176,59.52245593070984,2,False,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_67_15,Transitional woodland/shrub
+966,3,5745,64.25294876098633,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_68_71,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures"
+967,4,6459,69.5993959903717,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_69_17,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Pastures"
+968,2,5105,77.17605233192444,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_69_47,Arable land|Pastures
+969,3,5745,62.89035081863403,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_69_63,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures"
+970,3,6351,68.81996393203735,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_70_45,Arable land|Mixed forest|Pastures
+971,2,4125,50.526922941207886,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_70_56,Mixed forest|Pastures
+972,5,9288,93.08804273605347,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_71_21,"Broad-leaved forest|Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures|Transitional woodland/shrub"
+973,2,5105,76.34402513504028,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_71_48,Arable land|Pastures
+974,1,2429,45.69225013256073,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_71_56,Pastures
+975,2,7360,65.77442288398743,2,False,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_72_14,Broad-leaved forest|Pastures
+976,3,7967,87.11022138595581,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_72_17,"Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures|Transitional woodland/shrub"
+977,4,8383,87.90881037712097,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_72_20,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Pastures|Transitional woodland/shrub"
+978,1,2429,53.096091747283936,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_72_45,Pastures
+979,2,6894,79.219651222229,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_72_48,Pastures|Transitional woodland/shrub
+980,2,3030,57.64454007148743,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_72_49,Pastures|Urban fabric
+981,2,7360,82.49714970588684,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_72_60,Broad-leaved forest|Pastures
+982,2,7360,82.0213258266449,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_72_61,Broad-leaved forest|Pastures
+983,5,8656,88.12425136566162,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_73_23,"Coniferous forest|Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Pastures|Transitional woodland/shrub"
+984,3,7322,74.84825253486633,2,False,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_73_48,Pastures|Transitional woodland/shrub|Urban fabric
+985,2,3030,31.953245401382446,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_73_57,Pastures|Urban fabric
+986,3,6186,58.15531611442566,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_74_23,"Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Pastures"
+987,1,2429,41.309937834739685,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_74_28,Pastures
+988,3,4494,48.12770187854767,2,False,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_74_38,Coniferous forest|Mixed forest|Pastures
+989,2,5105,67.32313632965088,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_74_45,Arable land|Pastures
+990,1,725,5.9691172093153,78,False,False,False,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_74_56,Urban fabric
+991,1,2429,29.92526888847351,2,False,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_74_61,Pastures
+992,4,7823,84.77526903152466,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_75_14,Coniferous forest|Mixed forest|Pastures|Transitional woodland/shrub
+993,2,5105,63.408637046813965,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_75_45,Arable land|Pastures
+994,2,3030,48.72135519981384,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_75_46,Pastures|Urban fabric
+995,1,2429,44.05629634857178,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_76_42,Pastures
+996,3,6186,61.74619197845459,1,True,True,True,S2A_MSIL2A_20180225T114351_N9999_R123_T29UPU_77_26,"Land principally occupied by agriculture, with significant areas of natural vegetation|Mixed forest|Pastures"
+997,2,2682,24.767881631851196,1,True,True,True,S2A_MSIL2A_20180228T101021_N9999_R022_T34WFS_25_70,Coniferous forest|Mixed forest
+998,3,6509,75.59765577316284,1,True,True,True,S2A_MSIL2A_20180228T101021_N9999_R022_T34WFS_25_71,Coniferous forest|Mixed forest|Transitional woodland/shrub
+999,2,2682,27.09904909133911,4,False,True,True,S2A_MSIL2A_20180228T101021_N9999_R022_T34WFS_76_29,Coniferous forest|Mixed forest
