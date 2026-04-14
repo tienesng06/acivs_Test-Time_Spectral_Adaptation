@@ -1,0 +1,5 @@
+method,dataset,protocol,num_queries,num_gallery,R@1,R@5,R@10,mAP,source_artifact,notes,queries_vs_ours,gallery_vs_ours
+PCA,EuroSAT_MS,EuroSAT 80/10/10 matched protocol,2700,2700,82.11110830307007,95.88888883590698,98.00000190734863,42.46266279783514,results/pca_baseline/pca_baseline_results.csv,existing baseline artifact,1.0,1.0
+NDVI,EuroSAT_MS,EuroSAT 80/10/10 matched protocol,2700,2700,81.77777528762817,96.2592601776123,98.44444394111633,45.800061211127925,results/ndvi_baseline/ndvi_baseline_results.csv,existing baseline artifact,1.0,1.0
+RS-TransCLIP,EuroSAT_MS,EuroSAT 80/10/10 matched protocol,2700,2700,76.85185074806213,91.96296334266663,95.333331823349,43.811700839687276,results/rs_transclip/rs_transclip_baseline_results_notebook.csv,existing baseline artifact; best_alpha=0.3,1.0,1.0
+Ours (13-band pipeline),EuroSAT_MS,EuroSAT 80/10/10 matched protocol,2700,2700,83.55555534362793,96.03703618049622,98.00000190734863,45.55759329928292,results/matched_protocol/eurosat_matched_protocol_summary.csv,new matched-protocol 13-band pipeline evaluation,1.0,1.0
