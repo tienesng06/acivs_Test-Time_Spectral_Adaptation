@@ -642,6 +642,26 @@ def build_bigearth_subsets(
     }
 
 
+def bigearth_collate_fn(batch: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
+    """
+    Collate function that preserves per-sample multi-label metadata.
+
+    The default PyTorch collate logic transposes nested Python lists, which
+    makes ``label_names`` awkward to consume downstream.
+    """
+    if not batch:
+        raise ValueError("Cannot collate an empty BigEarthNet batch.")
+
+    return {
+        "image": torch.stack([sample["image"] for sample in batch], dim=0),
+        "labels": torch.stack([sample["labels"] for sample in batch], dim=0),
+        "label_names": [list(sample["label_names"]) for sample in batch],
+        "text": [str(sample["text"]) for sample in batch],
+        "patch_name": [str(sample["patch_name"]) for sample in batch],
+        "index": torch.tensor([int(sample["index"]) for sample in batch], dtype=torch.long),
+    }
+
+
 def build_bigearth_dataloaders(
     root: PathLike,
     batch_size: int = 32,
@@ -684,6 +704,7 @@ def build_bigearth_dataloaders(
             num_workers=num_workers,
             pin_memory=pin_memory,
             persistent_workers=(num_workers > 0),
+            collate_fn=bigearth_collate_fn,
         )
 
     return {"datasets": subsets, "loaders": loaders}
