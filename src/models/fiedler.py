@@ -81,8 +81,16 @@ def compute_fiedler_vector(
     """
     L = compute_graph_laplacian(A, normalized=normalized, eps=eps)
 
-    # For small B=13, eigh is perfectly fine
-    eigenvalues, eigenvectors = torch.linalg.eigh(L)
+    # torch.linalg.eigh is NOT supported on MPS device (Apple Silicon GPU).
+    # For the small 13×13 Laplacian matrix, CPU computation is negligible.
+    # Always compute eigh on CPU then move results back to the original device.
+    original_device = L.device
+    if original_device.type != "cpu":
+        eigenvalues, eigenvectors = torch.linalg.eigh(L.cpu())
+        eigenvalues = eigenvalues.to(original_device)
+        eigenvectors = eigenvectors.to(original_device)
+    else:
+        eigenvalues, eigenvectors = torch.linalg.eigh(L)
 
     # Sort ascending just in case
     idx = torch.argsort(eigenvalues)

@@ -108,49 +108,59 @@ def optimize_fusion_weights(
     # Build k-NN graph once (not part of the optimization loop)
     knn_indices = build_knn_graph(band_emb, k=k)
 
-    # Initialize learnable weight logits from initial weights
-    # Use log of w_init as logits so softmax(logits) ≈ w_init
-    w_logits = torch.log(w_init.detach().clamp(min=1e-8)).requires_grad_(True)
-    optimizer = torch.optim.Adam([w_logits], lr=lr)
-
     loss_history: List[float] = []
     steps_run = 0
 
-    for step in range(num_steps):
-        optimizer.zero_grad()
+    # IMPORTANT: torch.enable_grad() ensures the optimization loop always has
+    # gradient tracking enabled, even when called from a @torch.no_grad(),
+    # @torch.inference_mode(), or torch.set_grad_enabled(False) context.
+    # The encoding callers (encode_loader_with_band_embeddings, etc.) correctly
+    # disable grad for the CLIP forward passes, but this test-time optimization
+    # MUST have gradients to update the fusion weights via Adam.
+    with torch.enable_grad():
+        # Initialize learnable weight logits from initial weights
+        # Use log of w_init as logits so softmax(logits) ≈ w_init
+        w_logits = torch.log(w_init.detach().clamp(min=1e-8)).requires_grad_(True)
+        optimizer = torch.optim.Adam([w_logits], lr=lr)
 
-        # Softmax-normalize weights → [0, 1], sum = 1
-        w_norm = torch.softmax(w_logits, dim=0)
+        for step in range(num_steps):
+            optimizer.zero_grad()
 
-        # Weighted fusion
-        fused_emb = compute_fused_embedding(
-            band_emb, w_norm, normalize_output=False
-        )
+            # Softmax-normalize weights → [0, 1], sum = 1
+            w_norm = torch.softmax(w_logits, dim=0)
 
-        # Manifold consistency loss
-        loss = manifold_consistency_loss(
-            fused_emb, band_emb, knn_indices, lambda_m=lambda_m
-        )
+            # Weighted fusion
+            fused_emb = compute_fused_embedding(
+                band_emb, w_norm, normalize_output=False
+            )
 
-        loss.backward()
+            # Manifold consistency loss
+            loss = manifold_consistency_loss(
+                fused_emb, band_emb, knn_indices, lambda_m=lambda_m
+            )
 
-        # Gradient clipping for stability
-        if grad_clip is not None:
-            torch.nn.utils.clip_grad_norm_([w_logits], grad_clip)
+            loss.backward()
 
-        optimizer.step()
+            # Gradient clipping for stability
+            if grad_clip is not None:
+                torch.nn.utils.clip_grad_norm_([w_logits], grad_clip)
 
-        current_loss = loss.item()
-        loss_history.append(current_loss)
-        steps_run += 1
+            optimizer.step()
 
-        # Early stopping: if loss barely changed
-        if step > 0 and abs(loss_history[-2] - current_loss) < early_stop_tol:
-            break
+            current_loss = loss.item()
+            loss_history.append(current_loss)
+            steps_run += 1
 
-    # Final weights after optimization
+            # Early stopping: if loss barely changed
+            if step > 0 and abs(loss_history[-2] - current_loss) < early_stop_tol:
+                break
+
+        # Capture the optimized logits before exiting enable_grad context
+        optimized_logits = w_logits.detach()
+
+    # Final weights and embedding (no grad needed — pure inference)
     with torch.no_grad():
-        final_weights = torch.softmax(w_logits, dim=0)
+        final_weights = torch.softmax(optimized_logits, dim=0)
         final_fused = compute_fused_embedding(
             band_emb, final_weights, normalize_output=normalize_output
         )
