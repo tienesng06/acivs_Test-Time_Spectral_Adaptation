@@ -1,0 +1,2 @@
+method,fold_id,R@1,R@5,R@10,mAP,num_train,num_gallery,notes
+DOFA,0,,,,,,,Fill one row per fold for external methods.

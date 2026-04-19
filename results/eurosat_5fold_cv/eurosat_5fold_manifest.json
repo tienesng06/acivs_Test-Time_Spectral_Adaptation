@@ -1,0 +1,122 @@
+{
+  "dataset_root": "/Users/tienesng06/Desktop/ACIVS_ThayBach/data/EuroSAT_MS",
+  "clip_checkpoint": "/Users/tienesng06/Desktop/ACIVS_ThayBach/checkpoints/ViT-B-16.pt",
+  "results_dir": "/Users/tienesng06/Desktop/ACIVS_ThayBach/results/eurosat_5fold_cv",
+  "protocol": "5-fold retrieval CV with cyclic query/gallery assignment",
+  "methods_requested": [
+    "RGB-CLIP",
+    "PCA",
+    "NDVI",
+    "Tip-Adapter",
+    "RS-TransCLIP",
+    "Ours"
+  ],
+  "local_methods_run": [
+    "RGB-CLIP",
+    "PCA",
+    "NDVI",
+    "Tip-Adapter",
+    "RS-TransCLIP",
+    "Ours"
+  ],
+  "external_templates": {
+    "DOFA": {
+      "summary_csv": "/Users/tienesng06/Desktop/ACIVS_ThayBach/results/eurosat_5fold_cv/external_templates/dofa_fold_metrics_template.csv",
+      "per_query_csv": "/Users/tienesng06/Desktop/ACIVS_ThayBach/results/eurosat_5fold_cv/external_templates/dofa_per_query_template.csv"
+    }
+  },
+  "external_method_inputs": {},
+  "num_folds": 5,
+  "fold_ids": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "fold_definitions": [
+    {
+      "fold_id": 0,
+      "query_fold_id": 0,
+      "gallery_fold_id": 1,
+      "train_fold_ids": [
+        2,
+        3,
+        4
+      ],
+      "num_train": 16200,
+      "num_query": 5400,
+      "num_gallery": 5400
+    },
+    {
+      "fold_id": 1,
+      "query_fold_id": 1,
+      "gallery_fold_id": 2,
+      "train_fold_ids": [
+        0,
+        3,
+        4
+      ],
+      "num_train": 16200,
+      "num_query": 5400,
+      "num_gallery": 5400
+    },
+    {
+      "fold_id": 2,
+      "query_fold_id": 2,
+      "gallery_fold_id": 3,
+      "train_fold_ids": [
+        0,
+        1,
+        4
+      ],
+      "num_train": 16200,
+      "num_query": 5400,
+      "num_gallery": 5400
+    },
+    {
+      "fold_id": 3,
+      "query_fold_id": 3,
+      "gallery_fold_id": 4,
+      "train_fold_ids": [
+        0,
+        1,
+        2
+      ],
+      "num_train": 16200,
+      "num_query": 5400,
+      "num_gallery": 5400
+    },
+    {
+      "fold_id": 4,
+      "query_fold_id": 4,
+      "gallery_fold_id": 0,
+      "train_fold_ids": [
+        1,
+        2,
+        3
+      ],
+      "num_train": 16200,
+      "num_query": 5400,
+      "num_gallery": 5400
+    }
+  ],
+  "seed": 42,
+  "batch_size": 128,
+  "num_workers": 0,
+  "image_size": 224,
+  "micro_batch_size": 64,
+  "debug_caps": {
+    "max_train_per_class": null,
+    "max_heldout_per_class": null
+  },
+  "device": "mps",
+  "outputs": {
+    "fold_metrics_csv": "/Users/tienesng06/Desktop/ACIVS_ThayBach/results/eurosat_5fold_cv/eurosat_5fold_fold_metrics.csv",
+    "per_query_csv": "/Users/tienesng06/Desktop/ACIVS_ThayBach/results/eurosat_5fold_cv/eurosat_5fold_per_query.csv",
+    "comparison_csv": "/Users/tienesng06/Desktop/ACIVS_ThayBach/results/eurosat_5fold_cv/eurosat_5fold_comparison.csv",
+    "paired_ttest_csv": "/Users/tienesng06/Desktop/ACIVS_ThayBach/results/eurosat_5fold_cv/eurosat_5fold_paired_ttest.csv",
+    "per_class_csv": "/Users/tienesng06/Desktop/ACIVS_ThayBach/results/eurosat_5fold_cv/eurosat_5fold_per_class.csv",
+    "split_manifest_csv": "/Users/tienesng06/Desktop/ACIVS_ThayBach/results/eurosat_5fold_cv/eurosat_5fold_split_manifest.csv"
+  }
+}

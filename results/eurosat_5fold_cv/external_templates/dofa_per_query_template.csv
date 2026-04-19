@@ -1,0 +1,2 @@
+method,fold_id,query_label,class_name,AP_percent,first_hit_rank,hit@1,hit@5,hit@10,notes
+DOFA,0,0,AnnualCrop,,,,,,Optional but needed for the aggregated per-class table.
