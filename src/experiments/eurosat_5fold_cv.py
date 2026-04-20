@@ -26,10 +26,11 @@ from src.baselines.rs_transclip_baseline import (
     evaluate_single_label_retrieval_from_similarity,
     refine_similarity_matrix,
 )
-from src.datasets.eurosat import EuroSATMSDataset, get_band_index, get_default_text_queries
+from src.datasets.eurosat import EuroSATMSDataset, get_band_index
 from src.models.clip_utils import encode_test_gallery_rgb
 from src.models.per_band_encoder import encode_multispectral_batch, get_device
 from src.models.retrieval_pipeline import MultispectralRetrievalPipeline
+from src.utils.metrics import evaluate_text_to_image_retrieval
 
 
 DEFAULT_LOCAL_METHODS: tuple[str, ...] = (
@@ -114,7 +115,7 @@ def cap_indices_per_class(
     seed: int,
 ) -> List[int]:
     if max_per_class is None or max_per_class <= 0:
-        return list(indices)
+        return sorted(int(index) for index in indices)
 
     rng = np.random.default_rng(seed)
     buckets: Dict[int, List[int]] = {class_idx: [] for class_idx in range(len(dataset.class_names))}
@@ -133,22 +134,23 @@ def cap_indices_per_class(
     return sorted(capped)
 
 
-def make_stratified_kfold_indices(
+def make_stratified_kfold_buckets(
     labels: Sequence[int],
     *,
     num_folds: int = 5,
     seed: int = 42,
-) -> List[Dict[str, List[int]]]:
-    if num_folds < 2:
-        raise ValueError(f"num_folds must be >= 2, got {num_folds}")
+) -> List[Dict[str, Any]]:
+    if num_folds < 3:
+        raise ValueError(
+            "EuroSAT retrieval CV needs at least 3 folds so train/query/gallery are disjoint."
+        )
 
     rng = np.random.default_rng(seed)
     labels_np = np.asarray(labels)
     unique_labels = sorted(np.unique(labels_np).tolist())
-
-    fold_buckets: List[List[int]] = [[] for _ in range(num_folds)]
     all_indices = np.arange(labels_np.shape[0])
 
+    fold_buckets: List[List[int]] = [[] for _ in range(num_folds)]
     for label in unique_labels:
         class_indices = all_indices[labels_np == label]
         class_indices = rng.permutation(class_indices)
@@ -156,17 +158,51 @@ def make_stratified_kfold_indices(
         for fold_id, chunk in enumerate(class_splits):
             fold_buckets[fold_id].extend(chunk.tolist())
 
-    fold_splits: List[Dict[str, List[int]]] = []
-    full_index_set = set(all_indices.tolist())
+    return [
+        {
+            "fold_id": fold_id,
+            "indices": sorted(int(index) for index in bucket),
+        }
+        for fold_id, bucket in enumerate(fold_buckets)
+    ]
 
-    for fold_id, gallery_indices in enumerate(fold_buckets):
-        gallery_indices = rng.permutation(gallery_indices).tolist()
-        train_indices = sorted(full_index_set.difference(gallery_indices))
+
+def build_retrieval_fold_splits(
+    fold_buckets: Sequence[Mapping[str, Any]],
+) -> List[Dict[str, Any]]:
+    if len(fold_buckets) < 3:
+        raise ValueError("Need at least 3 fold buckets to build retrieval splits.")
+
+    index_by_fold = {
+        int(bucket["fold_id"]): [int(index) for index in bucket["indices"]]
+        for bucket in fold_buckets
+    }
+    ordered_fold_ids = sorted(index_by_fold.keys())
+
+    fold_splits: List[Dict[str, Any]] = []
+    num_folds = len(ordered_fold_ids)
+
+    for position, query_fold_id in enumerate(ordered_fold_ids):
+        gallery_fold_id = ordered_fold_ids[(position + 1) % num_folds]
+        train_fold_ids = [
+            fold_id
+            for fold_id in ordered_fold_ids
+            if fold_id not in {query_fold_id, gallery_fold_id}
+        ]
+
+        train_indices: List[int] = []
+        for fold_id in train_fold_ids:
+            train_indices.extend(index_by_fold[fold_id])
+
         fold_splits.append(
             {
-                "fold_id": fold_id,
-                "train": train_indices,
-                "gallery": gallery_indices,
+                "fold_id": position,
+                "query_fold_id": query_fold_id,
+                "gallery_fold_id": gallery_fold_id,
+                "train_fold_ids": train_fold_ids,
+                "train": sorted(train_indices),
+                "query": sorted(index_by_fold[query_fold_id]),
+                "gallery": sorted(index_by_fold[gallery_fold_id]),
             }
         )
 
@@ -175,7 +211,7 @@ def make_stratified_kfold_indices(
 
 def build_fold_manifest_rows(
     dataset: EuroSATMSDataset,
-    fold_splits: Sequence[Mapping[str, Sequence[int]]],
+    fold_splits: Sequence[Mapping[str, Any]],
 ) -> List[Dict[str, Any]]:
     rows: List[Dict[str, Any]] = []
 
@@ -183,6 +219,10 @@ def build_fold_manifest_rows(
         fold_id = int(fold["fold_id"])
         train_labels = torch.tensor(
             [dataset.samples[idx]["label"] for idx in fold["train"]],
+            dtype=torch.long,
+        )
+        query_labels = torch.tensor(
+            [dataset.samples[idx]["label"] for idx in fold["query"]],
             dtype=torch.long,
         )
         gallery_labels = torch.tensor(
@@ -194,9 +234,12 @@ def build_fold_manifest_rows(
             rows.append(
                 {
                     "fold_id": fold_id,
+                    "query_fold_id": int(fold["query_fold_id"]),
+                    "gallery_fold_id": int(fold["gallery_fold_id"]),
                     "class_idx": class_idx,
                     "class_name": class_name,
                     "train_count": int((train_labels == class_idx).sum().item()),
+                    "query_count": int((query_labels == class_idx).sum().item()),
                     "gallery_count": int((gallery_labels == class_idx).sum().item()),
                 }
             )
@@ -261,134 +304,165 @@ def encode_loader_with_band_embeddings(
     return result
 
 
-def _decorate_per_query_rows(
-    rows: Sequence[Dict[str, Any]],
+def fuse_band_embeddings(
+    batch_band_embeddings: torch.Tensor,
+    pipeline: MultispectralRetrievalPipeline,
     *,
-    fold_id: int,
-    method: str,
-    class_names: Sequence[str],
-) -> List[Dict[str, Any]]:
-    decorated: List[Dict[str, Any]] = []
-    for row in rows:
-        q_label = int(row["query_label"])
-        decorated.append(
-            {
-                "method": method,
-                "fold_id": fold_id,
-                "query_label": q_label,
-                "class_name": class_names[q_label],
-                **row,
-            }
-        )
-    return decorated
-
-
-def evaluate_class_query_similarity(
-    similarity_matrix: torch.Tensor,
-    *,
-    gallery_labels: torch.Tensor,
-    class_names: Sequence[str],
-    ks: Sequence[int] = DEFAULT_KS,
+    desc: str,
+    show_progress: bool,
 ) -> Dict[str, Any]:
-    query_labels = torch.arange(len(class_names), dtype=torch.long)
-    metrics, ranked_indices, ranked_relevance, per_query_rows = (
-        evaluate_single_label_retrieval_from_similarity(
-            similarity_matrix,
-            query_labels=query_labels,
-            gallery_labels=gallery_labels,
-            ks=ks,
-        )
-    )
+    fused_features: List[torch.Tensor] = []
+    elapsed_ms: List[float] = []
+    optimization_ms: List[float] = []
+
+    iterator: Iterable[int] = range(batch_band_embeddings.shape[0])
+    if show_progress:
+        iterator = tqdm(iterator, desc=desc)
+
+    for idx in iterator:
+        band_embeddings = batch_band_embeddings[idx].cpu().float()
+        proxy_query = F.normalize(band_embeddings.mean(dim=0), dim=0)
+        with torch.enable_grad():
+            result = pipeline.retrieve(
+                band_embeddings=band_embeddings,
+                query_embedding=proxy_query,
+            )
+        fused_features.append(result.fused_embedding.cpu())
+        elapsed_ms.append(float(result.elapsed_ms))
+        optimization_ms.append(float(result.optimization_ms))
 
     return {
-        "metrics": metrics,
-        "ranked_indices": ranked_indices,
-        "ranked_relevance": ranked_relevance,
-        "per_query_rows": per_query_rows,
+        "features": torch.stack(fused_features, dim=0),
+        "elapsed_ms": elapsed_ms,
+        "optimization_ms": optimization_ms,
+        "avg_fusion_ms": float(np.mean(elapsed_ms)) if elapsed_ms else math.nan,
+        "avg_optimization_ms": float(np.mean(optimization_ms)) if optimization_ms else math.nan,
     }
 
 
-def build_tip_adapter_similarity_matrix(
+def build_tip_adapter_logits_for_features(
     *,
-    text_features: torch.Tensor,
+    image_features: torch.Tensor,
     train_features: torch.Tensor,
     train_labels: torch.Tensor,
-    gallery_features: torch.Tensor,
+    text_features: torch.Tensor,
     num_classes: int,
     alpha: float,
     beta: float,
     chunk_size: int = 256,
     compute_device: Optional[torch.device] = None,
     show_progress: bool = True,
+    desc: str = "Tip-Adapter scoring",
 ) -> torch.Tensor:
     if chunk_size <= 0:
         raise ValueError(f"chunk_size must be > 0, got {chunk_size}")
 
     device = compute_device or torch.device("cpu")
-    text_features = F.normalize(text_features.float(), dim=-1).to(device)
+    image_features = F.normalize(image_features.float(), dim=-1).to(device)
     train_features = F.normalize(train_features.float(), dim=-1).to(device)
-    gallery_features = F.normalize(gallery_features.float(), dim=-1).to(device)
+    text_features = F.normalize(text_features.float(), dim=-1).to(device)
     train_labels = train_labels.long().to(device)
 
     cache_values = F.one_hot(train_labels, num_classes=num_classes).float()
     logits_chunks: List[torch.Tensor] = []
 
-    iterator = range(0, gallery_features.shape[0], chunk_size)
+    iterator = range(0, image_features.shape[0], chunk_size)
     if show_progress:
-        iterator = tqdm(iterator, desc="Tip-Adapter scoring")
+        iterator = tqdm(iterator, desc=desc)
 
     for start in iterator:
-        stop = min(start + chunk_size, gallery_features.shape[0])
-        gallery_chunk = gallery_features[start:stop]
+        stop = min(start + chunk_size, image_features.shape[0])
+        feature_chunk = image_features[start:stop]
 
-        clip_logits = gallery_chunk @ text_features.T
-        affinity = gallery_chunk @ train_features.T
+        clip_logits = feature_chunk @ text_features.T
+        affinity = feature_chunk @ train_features.T
         cache_logits = torch.exp(-beta * (1.0 - affinity)) @ cache_values
-        final_logits = clip_logits + alpha * cache_logits
-        logits_chunks.append(final_logits.cpu())
+        logits_chunks.append((clip_logits + alpha * cache_logits).cpu())
 
-    gallery_logits = torch.cat(logits_chunks, dim=0)
-    return gallery_logits.T.contiguous()
+    return torch.cat(logits_chunks, dim=0)
 
 
-def build_ours_similarity_matrix(
+def encode_tip_adapter_feature_space(
     *,
+    image_features: torch.Tensor,
+    train_features: torch.Tensor,
+    train_labels: torch.Tensor,
     text_features: torch.Tensor,
-    gallery_band_embeddings: torch.Tensor,
-    pipeline: MultispectralRetrievalPipeline,
+    num_classes: int,
+    alpha: float,
+    beta: float,
+    chunk_size: int,
     compute_device: Optional[torch.device],
     show_progress: bool,
-) -> tuple[torch.Tensor, Dict[str, float]]:
-    device = compute_device or torch.device("cpu")
-    band_embeddings = gallery_band_embeddings.to(device)
-    normalized_text = F.normalize(text_features.float(), dim=-1).to(device)
+    desc: str,
+) -> torch.Tensor:
+    logits = build_tip_adapter_logits_for_features(
+        image_features=image_features,
+        train_features=train_features,
+        train_labels=train_labels,
+        text_features=text_features,
+        num_classes=num_classes,
+        alpha=alpha,
+        beta=beta,
+        chunk_size=chunk_size,
+        compute_device=compute_device,
+        show_progress=show_progress,
+        desc=desc,
+    )
+    return F.normalize(logits.float(), dim=-1)
 
-    similarity_rows: List[torch.Tensor] = []
-    mean_ms_rows: List[float] = []
 
-    iterator: Iterable[Any] = enumerate(normalized_text)
-    if show_progress:
-        iterator = tqdm(
-            iterator,
-            total=normalized_text.shape[0],
-            desc="Ours query-conditioned fusion",
-        )
+def _tensor_to_list(values: Any) -> List[Any]:
+    if values is None:
+        return []
+    if torch.is_tensor(values):
+        return values.cpu().tolist()
+    return list(values)
 
-    for _, query_embedding in iterator:
-        batch_result = pipeline.retrieve_batch(
-            band_embeddings,
-            query_embedding,
-        )
-        fused_embeddings = F.normalize(batch_result.fused_embeddings.float(), dim=-1)
-        similarity = query_embedding.view(1, -1) @ fused_embeddings.T
-        similarity_rows.append(similarity.cpu())
-        mean_ms_rows.append(float(batch_result.mean_ms))
 
-    stats = {
-        "avg_gallery_fusion_ms_per_query": float(np.mean(mean_ms_rows)) if mean_ms_rows else math.nan,
-        "std_gallery_fusion_ms_per_query": float(np.std(mean_ms_rows, ddof=0)) if mean_ms_rows else math.nan,
-    }
-    return torch.cat(similarity_rows, dim=0), stats
+def _decorate_per_query_rows(
+    rows: Sequence[Dict[str, Any]],
+    *,
+    fold_id: int,
+    method: str,
+    class_names: Sequence[str],
+    query_paths: Optional[Sequence[Any]] = None,
+    query_label_names: Optional[Sequence[Any]] = None,
+    query_indices: Optional[Sequence[Any]] = None,
+    gallery_paths: Optional[Sequence[Any]] = None,
+) -> List[Dict[str, Any]]:
+    query_paths_list = _tensor_to_list(query_paths)
+    query_label_names_list = _tensor_to_list(query_label_names)
+    query_indices_list = _tensor_to_list(query_indices)
+    gallery_paths_list = _tensor_to_list(gallery_paths)
+
+    decorated: List[Dict[str, Any]] = []
+    for row_idx, row in enumerate(rows):
+        q_label = int(row["query_label"])
+        decorated_row = {
+            "method": method,
+            "fold_id": fold_id,
+            "query_label": q_label,
+            "class_name": class_names[q_label],
+            **row,
+        }
+
+        if row_idx < len(query_paths_list):
+            decorated_row["path"] = str(query_paths_list[row_idx])
+        if row_idx < len(query_label_names_list):
+            decorated_row["label_name"] = str(query_label_names_list[row_idx])
+        if row_idx < len(query_indices_list):
+            decorated_row["dataset_index"] = int(query_indices_list[row_idx])
+
+        top1_gallery_index = row.get("top1_gallery_index")
+        if top1_gallery_index is not None and gallery_paths_list:
+            gallery_index = int(top1_gallery_index)
+            if 0 <= gallery_index < len(gallery_paths_list):
+                decorated_row["top1_gallery_path"] = str(gallery_paths_list[gallery_index])
+
+        decorated.append(decorated_row)
+
+    return decorated
 
 
 def safe_paired_ttest(x: Sequence[float], y: Sequence[float]) -> Dict[str, float]:
@@ -469,6 +543,11 @@ def build_comparison_table(
             "method": method,
             "num_folds": int(method_df["fold_id"].nunique()),
         }
+        if "num_query" in method_df.columns:
+            row["num_query_mean"] = float(method_df["num_query"].astype(float).mean())
+        if "num_gallery" in method_df.columns:
+            row["num_gallery_mean"] = float(method_df["num_gallery"].astype(float).mean())
+
         for metric in metrics:
             values = method_df[metric].astype(float)
             mean_value = float(values.mean())
@@ -485,7 +564,7 @@ def build_paired_ttest_table(
     fold_metrics_df: pd.DataFrame,
     *,
     reference_method: str = "Ours",
-    metrics: Sequence[str] = ("R@1", "R@10", "mAP"),
+    metrics: Sequence[str] = ("R@1", "R@5", "R@10", "mAP"),
 ) -> pd.DataFrame:
     if fold_metrics_df.empty or reference_method not in set(fold_metrics_df["method"]):
         return pd.DataFrame()
@@ -535,7 +614,8 @@ def build_per_class_table(per_query_df: pd.DataFrame) -> pd.DataFrame:
     metric_cols = ["AP_percent", "hit@1", "hit@5", "hit@10"]
     working = per_query_df.copy()
     for column in ("hit@1", "hit@5", "hit@10"):
-        working[column] = working[column].astype(float) * 100.0
+        if column in working.columns:
+            working[column] = working[column].astype(float) * 100.0
 
     rows: List[Dict[str, Any]] = []
     grouped = working.groupby(["method", "query_label", "class_name"], sort=False)
@@ -545,8 +625,11 @@ def build_per_class_table(per_query_df: pd.DataFrame) -> pd.DataFrame:
             "query_label": int(query_label),
             "class_name": class_name,
             "num_folds": int(class_df["fold_id"].nunique()),
+            "num_queries": int(len(class_df)),
         }
         for column in metric_cols:
+            if column not in class_df.columns:
+                continue
             mean_value = float(class_df[column].mean())
             std_value = float(class_df[column].std(ddof=1)) if len(class_df) > 1 else 0.0
             pretty_name = "mAP" if column == "AP_percent" else column.replace("hit@", "R@")
@@ -577,12 +660,13 @@ def write_external_method_templates(
                     {
                         "method": method,
                         "fold_id": 0,
+                        "num_train": "",
+                        "num_query": "",
+                        "num_gallery": "",
                         "R@1": "",
                         "R@5": "",
                         "R@10": "",
                         "mAP": "",
-                        "num_train": "",
-                        "num_gallery": "",
                         "notes": "Fill one row per fold for external methods.",
                     }
                 ],
@@ -692,30 +776,42 @@ def run_eurosat_5fold_cv(
         reflectance_scale=10_000.0,
         clamp_range=(0.0, 1.0),
     )
-    fold_splits = make_stratified_kfold_indices(dataset.get_labels(), num_folds=num_folds, seed=seed)
+
+    fold_buckets = make_stratified_kfold_buckets(
+        dataset.get_labels(),
+        num_folds=num_folds,
+        seed=seed,
+    )
+    fold_splits = build_retrieval_fold_splits(fold_buckets)
     if fold_ids is not None:
         requested_fold_ids = {int(fold_id) for fold_id in fold_ids}
         fold_splits = [fold for fold in fold_splits if int(fold["fold_id"]) in requested_fold_ids]
         if not fold_splits:
             raise ValueError(f"No folds left after applying fold_ids={sorted(requested_fold_ids)}")
 
-    capped_fold_splits: List[Dict[str, List[int]]] = []
+    capped_fold_splits: List[Dict[str, Any]] = []
     for fold in fold_splits:
         fold_id = int(fold["fold_id"])
         capped_fold_splits.append(
             {
-                "fold_id": fold_id,
+                **fold,
                 "train": cap_indices_per_class(
                     dataset,
                     fold["train"],
                     max_per_class=max_train_per_class,
-                    seed=seed + fold_id * 17 + 1,
+                    seed=seed + fold_id * 31 + 1,
+                ),
+                "query": cap_indices_per_class(
+                    dataset,
+                    fold["query"],
+                    max_per_class=max_gallery_per_class,
+                    seed=seed + fold_id * 31 + 2,
                 ),
                 "gallery": cap_indices_per_class(
                     dataset,
                     fold["gallery"],
                     max_per_class=max_gallery_per_class,
-                    seed=seed + fold_id * 17 + 2,
+                    seed=seed + fold_id * 31 + 3,
                 ),
             }
         )
@@ -724,7 +820,6 @@ def run_eurosat_5fold_cv(
 
     active_device = device or get_device()
     local_methods = [method for method in methods if method in DEFAULT_LOCAL_METHODS]
-    class_prompts = get_default_text_queries()
     text_features = None
     clip_model = None
 
@@ -733,11 +828,9 @@ def run_eurosat_5fold_cv(
         text_features = encode_class_text_features(
             clip_model,
             clip_tokenize,
-            class_prompts=class_prompts,
+            class_prompts=dataset.get_text_prompts(),
             device=active_device,
         )
-    else:
-        clip_tokenize = None
 
     fold_metric_rows: List[Dict[str, Any]] = []
     per_query_rows: List[Dict[str, Any]] = []
@@ -745,11 +838,19 @@ def run_eurosat_5fold_cv(
     for fold in fold_splits:
         fold_id = int(fold["fold_id"])
         train_indices = fold["train"]
+        query_indices = fold["query"]
         gallery_indices = fold["gallery"]
 
         train_loader = _build_loader(
             dataset,
             train_indices,
+            batch_size=batch_size,
+            num_workers=num_workers,
+            shuffle=False,
+        )
+        query_loader = _build_loader(
+            dataset,
+            query_indices,
             batch_size=batch_size,
             num_workers=num_workers,
             shuffle=False,
@@ -762,11 +863,22 @@ def run_eurosat_5fold_cv(
             shuffle=False,
         )
 
+        query_rgb = None
         gallery_rgb = None
         train_rgb = None
-        gallery_band = None
 
-        if any(method in methods for method in ("RGB-CLIP", "RS-TransCLIP")):
+        if any(method in methods for method in ("RGB-CLIP", "Tip-Adapter", "RS-TransCLIP")):
+            query_rgb = encode_loader_with_rgb_patches(
+                query_loader,
+                clip_model,
+                active_device,
+                rgb_indices=(3, 2, 1),
+                image_size=image_size,
+                patch_pool_size=rs_transclip_patch_pool_size,
+                metadata_keys=("label", "label_name", "path", "index"),
+                desc=f"Fold {fold_id} RGB+patch query",
+                show_progress=show_progress,
+            )
             gallery_rgb = encode_loader_with_rgb_patches(
                 gallery_loader,
                 clip_model,
@@ -788,42 +900,42 @@ def run_eurosat_5fold_cv(
                 rgb_indices=(3, 2, 1),
                 show_progress=show_progress,
             )
-            if gallery_rgb is None:
-                gallery_rgb = encode_loader_with_rgb_patches(
-                    gallery_loader,
-                    clip_model,
-                    active_device,
-                    rgb_indices=(3, 2, 1),
-                    image_size=image_size,
-                    patch_pool_size=rs_transclip_patch_pool_size,
-                    metadata_keys=("label", "label_name", "path", "index"),
-                    desc=f"Fold {fold_id} RGB+patch gallery",
-                    show_progress=show_progress,
-                )
 
-        if "RGB-CLIP" in methods and gallery_rgb is not None:
-            similarity = text_features @ gallery_rgb["features"].T
-            evaluation = evaluate_class_query_similarity(
+        common_row = {
+            "fold_id": fold_id,
+            "seed": seed,
+            "query_fold_id": int(fold["query_fold_id"]),
+            "gallery_fold_id": int(fold["gallery_fold_id"]),
+            "num_train": len(train_indices),
+            "num_query": len(query_indices),
+            "num_gallery": len(gallery_indices),
+        }
+
+        if "RGB-CLIP" in methods and query_rgb is not None and gallery_rgb is not None:
+            similarity = query_rgb["features"] @ gallery_rgb["features"].T
+            evaluation = evaluate_single_label_retrieval_from_similarity(
                 similarity,
+                query_labels=query_rgb["label"],
                 gallery_labels=gallery_rgb["label"],
-                class_names=dataset.class_names,
+                ks=DEFAULT_KS,
             )
             fold_metric_rows.append(
                 {
                     "method": "RGB-CLIP",
-                    "fold_id": fold_id,
-                    "seed": seed,
-                    "num_train": len(train_indices),
-                    "num_gallery": len(gallery_indices),
-                    **{metric: float(value) for metric, value in evaluation["metrics"].items()},
+                    **common_row,
+                    **{metric: float(value) for metric, value in evaluation[0].items()},
                 }
             )
             per_query_rows.extend(
                 _decorate_per_query_rows(
-                    evaluation["per_query_rows"],
+                    evaluation[3],
                     fold_id=fold_id,
                     method="RGB-CLIP",
                     class_names=dataset.class_names,
+                    query_paths=query_rgb["path"],
+                    query_label_names=query_rgb["label_name"],
+                    query_indices=query_rgb["index"],
+                    gallery_paths=gallery_rgb["path"],
                 )
             )
 
@@ -831,6 +943,16 @@ def run_eurosat_5fold_cv(
             pca_state = fit_global_pca_from_loader(
                 train_loader,
                 desc=f"Fold {fold_id} PCA fit",
+                show_progress=show_progress,
+            )
+            query_pca = encode_loader_with_pca(
+                query_loader,
+                clip_model,
+                active_device,
+                image_size=image_size,
+                pca_state=pca_state,
+                metadata_keys=("label", "label_name", "path", "index"),
+                desc=f"Fold {fold_id} PCA query",
                 show_progress=show_progress,
             )
             gallery_pca = encode_loader_with_pca(
@@ -843,32 +965,45 @@ def run_eurosat_5fold_cv(
                 desc=f"Fold {fold_id} PCA gallery",
                 show_progress=show_progress,
             )
-            similarity = text_features @ gallery_pca["features"].T
-            evaluation = evaluate_class_query_similarity(
-                similarity,
+            evaluation = evaluate_text_to_image_retrieval(
+                query_features=query_pca["features"],
+                query_labels=query_pca["label"],
+                gallery_features=gallery_pca["features"],
                 gallery_labels=gallery_pca["label"],
-                class_names=dataset.class_names,
+                ks=DEFAULT_KS,
             )
             fold_metric_rows.append(
                 {
                     "method": "PCA",
-                    "fold_id": fold_id,
-                    "seed": seed,
-                    "num_train": len(train_indices),
-                    "num_gallery": len(gallery_indices),
-                    **{metric: float(value) for metric, value in evaluation["metrics"].items()},
+                    **common_row,
+                    **{metric: float(value) for metric, value in evaluation[0].items()},
                 }
             )
             per_query_rows.extend(
                 _decorate_per_query_rows(
-                    evaluation["per_query_rows"],
+                    evaluation[4],
                     fold_id=fold_id,
                     method="PCA",
                     class_names=dataset.class_names,
+                    query_paths=query_pca["path"],
+                    query_label_names=query_pca["label_name"],
+                    query_indices=query_pca["index"],
                 )
             )
 
         if "NDVI" in methods:
+            query_ndvi = encode_loader_with_spectral_indices(
+                query_loader,
+                clip_model,
+                active_device,
+                nir_idx=get_band_index("B08"),
+                red_idx=get_band_index("B04"),
+                green_idx=get_band_index("B03"),
+                image_size=image_size,
+                metadata_keys=("label", "label_name", "path", "index"),
+                desc=f"Fold {fold_id} NDVI query",
+                show_progress=show_progress,
+            )
             gallery_ndvi = encode_loader_with_spectral_indices(
                 gallery_loader,
                 clip_model,
@@ -881,71 +1016,89 @@ def run_eurosat_5fold_cv(
                 desc=f"Fold {fold_id} NDVI gallery",
                 show_progress=show_progress,
             )
-            similarity = text_features @ gallery_ndvi["features"].T
-            evaluation = evaluate_class_query_similarity(
-                similarity,
+            evaluation = evaluate_text_to_image_retrieval(
+                query_features=query_ndvi["features"],
+                query_labels=query_ndvi["label"],
+                gallery_features=gallery_ndvi["features"],
                 gallery_labels=gallery_ndvi["label"],
-                class_names=dataset.class_names,
+                ks=DEFAULT_KS,
             )
             fold_metric_rows.append(
                 {
                     "method": "NDVI",
-                    "fold_id": fold_id,
-                    "seed": seed,
-                    "num_train": len(train_indices),
-                    "num_gallery": len(gallery_indices),
-                    **{metric: float(value) for metric, value in evaluation["metrics"].items()},
+                    **common_row,
+                    **{metric: float(value) for metric, value in evaluation[0].items()},
                 }
             )
             per_query_rows.extend(
                 _decorate_per_query_rows(
-                    evaluation["per_query_rows"],
+                    evaluation[4],
                     fold_id=fold_id,
                     method="NDVI",
                     class_names=dataset.class_names,
+                    query_paths=query_ndvi["path"],
+                    query_label_names=query_ndvi["label_name"],
+                    query_indices=query_ndvi["index"],
                 )
             )
 
-        if "Tip-Adapter" in methods and train_rgb is not None and gallery_rgb is not None:
-            similarity = build_tip_adapter_similarity_matrix(
-                text_features=text_features,
+        if "Tip-Adapter" in methods and train_rgb is not None and query_rgb is not None and gallery_rgb is not None:
+            query_tip = encode_tip_adapter_feature_space(
+                image_features=query_rgb["features"],
                 train_features=train_rgb["features"],
                 train_labels=train_rgb["labels"],
-                gallery_features=gallery_rgb["features"],
+                text_features=text_features,
                 num_classes=len(dataset.class_names),
                 alpha=tip_adapter_alpha,
                 beta=tip_adapter_beta,
                 chunk_size=tip_adapter_chunk_size,
                 compute_device=active_device,
                 show_progress=show_progress,
+                desc=f"Fold {fold_id} Tip-Adapter query",
             )
-            evaluation = evaluate_class_query_similarity(
+            gallery_tip = encode_tip_adapter_feature_space(
+                image_features=gallery_rgb["features"],
+                train_features=train_rgb["features"],
+                train_labels=train_rgb["labels"],
+                text_features=text_features,
+                num_classes=len(dataset.class_names),
+                alpha=tip_adapter_alpha,
+                beta=tip_adapter_beta,
+                chunk_size=tip_adapter_chunk_size,
+                compute_device=active_device,
+                show_progress=show_progress,
+                desc=f"Fold {fold_id} Tip-Adapter gallery",
+            )
+            similarity = query_tip @ gallery_tip.T
+            evaluation = evaluate_single_label_retrieval_from_similarity(
                 similarity,
+                query_labels=query_rgb["label"],
                 gallery_labels=gallery_rgb["label"],
-                class_names=dataset.class_names,
+                ks=DEFAULT_KS,
             )
             fold_metric_rows.append(
                 {
                     "method": "Tip-Adapter",
-                    "fold_id": fold_id,
-                    "seed": seed,
-                    "num_train": len(train_indices),
-                    "num_gallery": len(gallery_indices),
+                    **common_row,
                     "tip_adapter_alpha": tip_adapter_alpha,
                     "tip_adapter_beta": tip_adapter_beta,
-                    **{metric: float(value) for metric, value in evaluation["metrics"].items()},
+                    **{metric: float(value) for metric, value in evaluation[0].items()},
                 }
             )
             per_query_rows.extend(
                 _decorate_per_query_rows(
-                    evaluation["per_query_rows"],
+                    evaluation[3],
                     fold_id=fold_id,
                     method="Tip-Adapter",
                     class_names=dataset.class_names,
+                    query_paths=query_rgb["path"],
+                    query_label_names=query_rgb["label_name"],
+                    query_indices=query_rgb["index"],
+                    gallery_paths=gallery_rgb["path"],
                 )
             )
 
-        if "RS-TransCLIP" in methods and gallery_rgb is not None:
+        if "RS-TransCLIP" in methods and query_rgb is not None and gallery_rgb is not None:
             patch_affinity = build_gallery_patch_affinity_knn(
                 gallery_rgb["patch_descriptors"],
                 topk=rs_transclip_affinity_topk,
@@ -953,44 +1106,54 @@ def run_eurosat_5fold_cv(
                 compute_device=active_device,
                 show_progress=show_progress,
             )
-            base_similarity = text_features @ gallery_rgb["features"].T
+            base_similarity = query_rgb["features"] @ gallery_rgb["features"].T
             refined_similarity = refine_similarity_matrix(
                 base_similarity,
                 patch_affinity=patch_affinity,
                 alpha=rs_transclip_alpha,
             )
-            evaluation = evaluate_class_query_similarity(
+            evaluation = evaluate_single_label_retrieval_from_similarity(
                 refined_similarity,
+                query_labels=query_rgb["label"],
                 gallery_labels=gallery_rgb["label"],
-                class_names=dataset.class_names,
+                ks=DEFAULT_KS,
             )
             fold_metric_rows.append(
                 {
                     "method": "RS-TransCLIP",
-                    "fold_id": fold_id,
-                    "seed": seed,
-                    "num_train": len(train_indices),
-                    "num_gallery": len(gallery_indices),
+                    **common_row,
                     "rs_transclip_alpha": rs_transclip_alpha,
-                    **{metric: float(value) for metric, value in evaluation["metrics"].items()},
+                    **{metric: float(value) for metric, value in evaluation[0].items()},
                 }
             )
             per_query_rows.extend(
                 _decorate_per_query_rows(
-                    evaluation["per_query_rows"],
+                    evaluation[3],
                     fold_id=fold_id,
                     method="RS-TransCLIP",
                     class_names=dataset.class_names,
+                    query_paths=query_rgb["path"],
+                    query_label_names=query_rgb["label_name"],
+                    query_indices=query_rgb["index"],
+                    gallery_paths=gallery_rgb["path"],
                 )
             )
 
         if "Ours" in methods:
+            query_band = encode_loader_with_band_embeddings(
+                query_loader,
+                clip_model,
+                active_device,
+                micro_batch_size=micro_batch_size,
+                desc=f"Fold {fold_id} band embeddings query",
+                show_progress=show_progress,
+            )
             gallery_band = encode_loader_with_band_embeddings(
                 gallery_loader,
                 clip_model,
                 active_device,
                 micro_batch_size=micro_batch_size,
-                desc=f"Fold {fold_id} band embeddings",
+                desc=f"Fold {fold_id} band embeddings gallery",
                 show_progress=show_progress,
             )
             pipeline = MultispectralRetrievalPipeline(
@@ -1002,40 +1165,50 @@ def run_eurosat_5fold_cv(
                 grad_clip=ours_grad_clip,
                 early_stop_tol=ours_early_stop_tol,
             )
-            ours_similarity, ours_stats = build_ours_similarity_matrix(
-                text_features=text_features,
-                gallery_band_embeddings=gallery_band["band_embeddings"],
-                pipeline=pipeline,
-                compute_device=active_device,
+            query_fused = fuse_band_embeddings(
+                query_band["band_embeddings"],
+                pipeline,
+                desc=f"Fold {fold_id} Ours fuse query",
                 show_progress=show_progress,
             )
-            evaluation = evaluate_class_query_similarity(
-                ours_similarity,
+            gallery_fused = fuse_band_embeddings(
+                gallery_band["band_embeddings"],
+                pipeline,
+                desc=f"Fold {fold_id} Ours fuse gallery",
+                show_progress=show_progress,
+            )
+            evaluation = evaluate_text_to_image_retrieval(
+                query_features=query_fused["features"],
+                query_labels=query_band["label"],
+                gallery_features=gallery_fused["features"],
                 gallery_labels=gallery_band["label"],
-                class_names=dataset.class_names,
+                ks=DEFAULT_KS,
             )
             fold_metric_rows.append(
                 {
                     "method": "Ours",
-                    "fold_id": fold_id,
-                    "seed": seed,
-                    "num_train": len(train_indices),
-                    "num_gallery": len(gallery_indices),
+                    **common_row,
                     "ours_sigma": ours_sigma,
                     "ours_num_steps": ours_num_steps,
                     "ours_lr": ours_lr,
                     "ours_lambda_m": ours_lambda_m,
                     "ours_k": ours_k,
-                    **ours_stats,
-                    **{metric: float(value) for metric, value in evaluation["metrics"].items()},
+                    "avg_query_fusion_ms": query_fused["avg_fusion_ms"],
+                    "avg_query_optimization_ms": query_fused["avg_optimization_ms"],
+                    "avg_gallery_fusion_ms": gallery_fused["avg_fusion_ms"],
+                    "avg_gallery_optimization_ms": gallery_fused["avg_optimization_ms"],
+                    **{metric: float(value) for metric, value in evaluation[0].items()},
                 }
             )
             per_query_rows.extend(
                 _decorate_per_query_rows(
-                    evaluation["per_query_rows"],
+                    evaluation[4],
                     fold_id=fold_id,
                     method="Ours",
                     class_names=dataset.class_names,
+                    query_paths=query_band["path"],
+                    query_label_names=query_band["label_name"],
+                    query_indices=query_band["index"],
                 )
             )
 
@@ -1055,7 +1228,7 @@ def run_eurosat_5fold_cv(
 
     per_query_df = pd.DataFrame(per_query_rows)
     if not per_query_df.empty:
-        per_query_df = per_query_df.sort_values(["method", "fold_id", "query_label"]).reset_index(drop=True)
+        per_query_df = sort_by_available_columns(per_query_df, ["method", "fold_id", "query_index"])
 
     comparison_df = build_comparison_table(fold_metrics_df)
     paired_ttest_df = build_paired_ttest_table(fold_metrics_df, reference_method="Ours")
@@ -1064,7 +1237,7 @@ def run_eurosat_5fold_cv(
     if not split_manifest_df.empty:
         split_manifest_df = split_manifest_df.sort_values(["fold_id", "class_idx"]).reset_index(drop=True)
 
-    method_order = []
+    method_order: List[str] = []
     if not fold_metrics_df.empty and "method" in fold_metrics_df.columns:
         seen_methods = set(fold_metrics_df["method"].astype(str).tolist())
         method_order = [method for method in methods if method in seen_methods]
@@ -1093,7 +1266,7 @@ def run_eurosat_5fold_cv(
             column="method",
             categories=method_order,
         )
-        per_query_df = sort_by_available_columns(per_query_df, ["method", "fold_id", "query_label"])
+        per_query_df = sort_by_available_columns(per_query_df, ["method", "fold_id", "query_index"])
 
         if not paired_ttest_df.empty and "compared_method" in paired_ttest_df.columns:
             paired_ttest_df = apply_ordered_category(
@@ -1125,6 +1298,7 @@ def run_eurosat_5fold_cv(
         "dataset_root": str(root),
         "clip_checkpoint": str(clip_checkpoint),
         "results_dir": str(results_dir),
+        "protocol": "5-fold retrieval CV with cyclic query/gallery assignment",
         "methods_requested": list(methods),
         "local_methods_run": list(local_methods),
         "external_templates": {
@@ -1137,6 +1311,18 @@ def run_eurosat_5fold_cv(
         },
         "num_folds": num_folds,
         "fold_ids": sorted(int(fold["fold_id"]) for fold in fold_splits),
+        "fold_definitions": [
+            {
+                "fold_id": int(fold["fold_id"]),
+                "query_fold_id": int(fold["query_fold_id"]),
+                "gallery_fold_id": int(fold["gallery_fold_id"]),
+                "train_fold_ids": [int(fold_id) for fold_id in fold["train_fold_ids"]],
+                "num_train": len(fold["train"]),
+                "num_query": len(fold["query"]),
+                "num_gallery": len(fold["gallery"]),
+            }
+            for fold in fold_splits
+        ],
         "seed": seed,
         "batch_size": batch_size,
         "num_workers": num_workers,
@@ -1144,7 +1330,7 @@ def run_eurosat_5fold_cv(
         "micro_batch_size": micro_batch_size,
         "debug_caps": {
             "max_train_per_class": max_train_per_class,
-            "max_gallery_per_class": max_gallery_per_class,
+            "max_heldout_per_class": max_gallery_per_class,
         },
         "device": str(active_device),
         "outputs": {
