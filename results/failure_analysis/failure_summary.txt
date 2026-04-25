@@ -3,70 +3,70 @@
 ========================================================================
 
   Total queries:   4320
-  Total failures:  525
-  Failure rate:    12.2%
+  Total failures:  541
+  Failure rate:    12.5%
   Threshold:       R@1 miss
 
 ------------------------------------------------------------------------
   FAILURE CAUSE BREAKDOWN
 ------------------------------------------------------------------------
   Cloud Cover              0  (  0.0%)  Classes: 
-  Mixed Scene              0  (  0.0%)  Classes: 
+  Mixed Scene              1  (  0.2%)  Classes: HerbaceousVegetation
   Rare Class               0  (  0.0%)  Classes: 
-  Seasonal Variation     525  (100.0%)  Classes: AnnualCrop, Forest, HerbaceousVegetation, Highway, Industrial, ...
+  Seasonal Variation     540  ( 99.8%)  Classes: AnnualCrop, Forest, HerbaceousVegetation, Highway, Industrial, ...
 
 ------------------------------------------------------------------------
   PER-CLASS FAILURE DETAILS
 ------------------------------------------------------------------------
 
   ▸ AnnualCrop
-    Failures: 57, Avg rank: 8.8, Mean AP: 0.284
-    Confused with: PermanentCrop(22), Highway(11), Pasture(9)
-    Causes: Seasonal Variation:57
+    Failures: 63, Avg rank: 8.3, Mean AP: 0.299
+    Confused with: PermanentCrop(25), Highway(15), Pasture(9)
+    Causes: Seasonal Variation:63
 
   ▸ Forest
-    Failures: 24, Avg rank: 3.8, Mean AP: 0.325
-    Confused with: HerbaceousVegetation(17), Pasture(4), Highway(2)
-    Causes: Seasonal Variation:24
+    Failures: 27, Avg rank: 3.9, Mean AP: 0.335
+    Confused with: HerbaceousVegetation(18), Pasture(6), Highway(2)
+    Causes: Seasonal Variation:27
 
   ▸ HerbaceousVegetation
-    Failures: 67, Avg rank: 4.8, Mean AP: 0.301
-    Confused with: Forest(25), PermanentCrop(22), Pasture(9)
-    Causes: Seasonal Variation:67
+    Failures: 69, Avg rank: 4.2, Mean AP: 0.294
+    Confused with: Forest(24), PermanentCrop(22), Pasture(10)
+    Causes: Mixed Scene:1, Seasonal Variation:68
 
   ▸ Highway
-    Failures: 104, Avg rank: 5.6, Mean AP: 0.169
-    Confused with: AnnualCrop(21), River(21), PermanentCrop(15)
-    Causes: Seasonal Variation:104
+    Failures: 105, Avg rank: 5.5, Mean AP: 0.167
+    Confused with: AnnualCrop(23), River(21), PermanentCrop(13)
+    Causes: Seasonal Variation:105
 
   ▸ Industrial
-    Failures: 34, Avg rank: 3.9, Mean AP: 0.311
-    Confused with: Residential(13), Highway(11), PermanentCrop(7)
-    Causes: Seasonal Variation:34
+    Failures: 31, Avg rank: 3.9, Mean AP: 0.321
+    Confused with: Residential(11), Highway(10), PermanentCrop(7)
+    Causes: Seasonal Variation:31
 
   ▸ Pasture
-    Failures: 61, Avg rank: 6.9, Mean AP: 0.150
-    Confused with: Forest(17), HerbaceousVegetation(15), Highway(9)
-    Causes: Seasonal Variation:61
+    Failures: 65, Avg rank: 7.0, Mean AP: 0.149
+    Confused with: HerbaceousVegetation(19), Forest(18), Highway(11)
+    Causes: Seasonal Variation:65
 
   ▸ PermanentCrop
-    Failures: 89, Avg rank: 7.8, Mean AP: 0.156
-    Confused with: AnnualCrop(20), Pasture(19), HerbaceousVegetation(14)
-    Causes: Seasonal Variation:89
+    Failures: 96, Avg rank: 8.0, Mean AP: 0.157
+    Confused with: Pasture(23), AnnualCrop(21), HerbaceousVegetation(15)
+    Causes: Seasonal Variation:96
 
   ▸ Residential
-    Failures: 28, Avg rank: 3.7, Mean AP: 0.262
-    Confused with: Industrial(9), HerbaceousVegetation(8), Highway(5)
-    Causes: Seasonal Variation:28
+    Failures: 25, Avg rank: 5.3, Mean AP: 0.248
+    Confused with: Industrial(7), HerbaceousVegetation(6), PermanentCrop(5)
+    Causes: Seasonal Variation:25
 
   ▸ River
-    Failures: 48, Avg rank: 4.6, Mean AP: 0.220
-    Confused with: Highway(32), AnnualCrop(7), SeaLake(4)
+    Failures: 48, Avg rank: 5.3, Mean AP: 0.219
+    Confused with: Highway(35), AnnualCrop(7), HerbaceousVegetation(3)
     Causes: Seasonal Variation:48
 
   ▸ SeaLake
-    Failures: 13, Avg rank: 69.0, Mean AP: 0.124
-    Confused with: River(7), HerbaceousVegetation(2), AnnualCrop(2)
-    Causes: Seasonal Variation:13
+    Failures: 12, Avg rank: 79.4, Mean AP: 0.135
+    Confused with: River(6), HerbaceousVegetation(2), AnnualCrop(2)
+    Causes: Seasonal Variation:12
 
 ========================================================================

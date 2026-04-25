@@ -3,10 +3,10 @@
 ========================================================================
 
 ▸ AnnualCrop  (n=200 samples)
-  Dominant region: NIR
+  Dominant region: Water Vapor
   Key bands: Red-Edge (B05-B07) + NIR (B08) + SWIR (B11-B12)
-  Top-3: B09=0.806, B8A=0.574, B01=0.498
-  Bottom-3: B05=0.195, B02=0.182, B03=0.178
+  Top-3: B09=0.875, B8A=0.408, B01=0.344
+  Bottom-3: B11=0.148, B02=0.133, B03=0.131
   Physical reason:
         Crop fields show seasonal variation captured by Red-Edge
     sensitivity to chlorophyll concentration changes. SWIR bands
@@ -17,8 +17,8 @@
 ▸ Forest  (n=200 samples)
   Dominant region: NIR
   Key bands: NIR (B08, B8A) + Red-Edge (B05-B07)
-  Top-3: B08=0.913, B01=0.473, B09=0.459
-  Bottom-3: B10=0.193, B03=0.167, B04=0.145
+  Top-3: B08=0.919, B09=0.445, B01=0.337
+  Bottom-3: B06=0.137, B03=0.122, B04=0.108
   Physical reason:
         Healthy vegetation reflects strongly in NIR due to leaf cell
     structure (mesophyll scattering). Red-Edge bands capture the sharp
@@ -29,8 +29,8 @@
 ▸ HerbaceousVegetation  (n=200 samples)
   Dominant region: Visible (RGB)
   Key bands: NIR (B08) + Red-Edge (B05-B07) + Green (B03)
-  Top-3: B08=0.733, B09=0.688, B04=0.537
-  Bottom-3: B02=0.311, B11=0.294, B10=0.248
+  Top-3: B08=0.717, B09=0.687, B04=0.462
+  Bottom-3: B02=0.233, B11=0.223, B10=0.192
   Physical reason:
         Similar to forest but with higher green reflectance due to
     less canopy layering. The NIR plateau is slightly lower than dense
@@ -41,8 +41,8 @@
 ▸ Highway  (n=200 samples)
   Dominant region: NIR
   Key bands: SWIR (B11-B12) + Red (B04) + NIR (B08)
-  Top-3: B08=0.905, B01=0.580, B04=0.524
-  Bottom-3: B12=0.208, B07=0.206, B06=0.181
+  Top-3: B08=0.905, B04=0.433, B01=0.392
+  Bottom-3: B12=0.145, B07=0.142, B06=0.121
   Physical reason:
         Asphalt and concrete have moderate, relatively flat spectral
     reflectance. SWIR bands distinguish impervious surfaces from
@@ -53,8 +53,8 @@
 ▸ Industrial  (n=200 samples)
   Dominant region: Visible (RGB)
   Key bands: SWIR (B11-B12) + Red (B04) + Coastal (B01)
-  Top-3: B08=0.945, B04=0.880, B03=0.842
-  Bottom-3: B06=0.202, B07=0.112, B12=0.067
+  Top-3: B08=0.945, B04=0.752, B03=0.701
+  Bottom-3: B06=0.119, B07=0.065, B12=0.036
   Physical reason:
         Industrial areas mix metal roofs, concrete, and bare soil.
     SWIR is sensitive to these materials' mineral composition. The
@@ -65,8 +65,8 @@
 ▸ Pasture  (n=200 samples)
   Dominant region: NIR
   Key bands: NIR (B08) + Green (B03) + Red-Edge (B05)
-  Top-3: B08=0.937, B01=0.566, B12=0.501
-  Bottom-3: B03=0.197, B10=0.157, B04=0.147
+  Top-3: B08=0.952, B01=0.375, B12=0.333
+  Bottom-3: B03=0.133, B10=0.102, B04=0.099
   Physical reason:
         Grassland pastures have moderate NIR reflectance (lower than
     forest), strong green peak, and lower Red-Edge gradients. The
@@ -77,8 +77,8 @@
 ▸ PermanentCrop  (n=200 samples)
   Dominant region: Visible (RGB)
   Key bands: NIR (B08, B8A) + Red-Edge (B06-B07)
-  Top-3: B04=0.776, B08=0.743, B03=0.585
-  Bottom-3: B05=0.295, B10=0.284, B11=0.258
+  Top-3: B08=0.746, B04=0.697, B03=0.464
+  Bottom-3: B10=0.212, B05=0.211, B11=0.189
   Physical reason:
         Perennial crops (orchards, vineyards) have stable canopy
     structure with strong NIR reflectance year-round. Red-Edge bands
@@ -88,8 +88,8 @@
 ▸ Residential  (n=200 samples)
   Dominant region: Visible (RGB)
   Key bands: SWIR (B11-B12) + Red (B04) + Green (B03)
-  Top-3: B08=0.913, B04=0.839, B03=0.643
-  Bottom-3: B07=0.210, B12=0.192, B09=0.147
+  Top-3: B08=0.922, B04=0.751, B03=0.534
+  Bottom-3: B09=0.149, B07=0.143, B12=0.132
   Physical reason:
         Residential areas mix impervious surfaces (roofs, roads) with
     urban vegetation. SWIR separates built-up from greenery, while
@@ -99,8 +99,8 @@
 ▸ River  (n=200 samples)
   Dominant region: NIR
   Key bands: Blue (B02) + Green (B03) + SWIR (B11-B12)
-  Top-3: B08=0.857, B01=0.608, B09=0.401
-  Bottom-3: B11=0.215, B06=0.186, B10=0.145
+  Top-3: B08=0.865, B01=0.442, B09=0.410
+  Bottom-3: B11=0.168, B06=0.138, B10=0.116
   Physical reason:
         Water absorbs strongly in NIR/SWIR (near-zero reflectance),
     while reflecting in blue/green. The contrast between high visible
@@ -111,8 +111,8 @@
 ▸ SeaLake  (n=200 samples)
   Dominant region: Visible (RGB)
   Key bands: Blue (B02) + Coastal (B01) + Green (B03)
-  Top-3: B09=0.837, B8A=0.651, B02=0.647
-  Bottom-3: B12=0.203, B06=0.197, B08=0.188
+  Top-3: B09=0.853, B8A=0.645, B11=0.622
+  Bottom-3: B12=0.196, B07=0.192, B06=0.185
   Physical reason:
         Open water reflects most in short-wavelength bands. Coastal
     aerosol band (B01) penetrates water deeper, useful for bathymetry

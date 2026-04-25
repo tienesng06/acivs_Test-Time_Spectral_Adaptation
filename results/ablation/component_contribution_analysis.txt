@@ -1,0 +1,28 @@
+# Component Contribution Analysis
+
+Protocol: EuroSAT-MS 80/10/10 matched protocol, val queries vs test gallery.
+Conditioning: each non-RGB configuration uses the CLIP text embedding of the sample class for Eq. 1.
+The values below are measured from local artifacts, not injected from the planning targets.
+
+| Component | R@1 | R@10 | Delta R@1 |
+|---|---:|---:|---:|
+| No per-band (RGB baseline) | 79.11 | 97.19 | +0.00 |
+| + Per-band encode | 84.11 | 98.63 | +5.00 |
+| + Affinity graph | 83.89 | 98.56 | +4.78 |
+| + Fiedler | 83.22 | 98.59 | +4.11 |
+| + Manifold optimization | 83.15 | 98.44 | +4.04 |
+
+Cumulative R@1 delta: +4.04 percentage points.
+Cumulative R@10 delta: +1.26 percentage points.
+Monotonic R@1 increase: no.
+
+Incremental R@1 contributions:
+- + Per-band encode: +5.00 pp
+- + Affinity graph: -0.22 pp
+- + Fiedler: -0.67 pp
+- + Manifold optimization: -0.07 pp
+
+Components with non-positive incremental R@1 in this run:
+- + Affinity graph: -0.22 pp
+- + Fiedler: -0.67 pp
+- + Manifold optimization: -0.07 pp

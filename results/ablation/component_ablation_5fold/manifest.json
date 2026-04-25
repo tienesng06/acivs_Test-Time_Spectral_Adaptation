@@ -1,0 +1,23 @@
+{
+  "script": "scripts/run_component_ablation_5fold.py",
+  "dataset_root": "data/EuroSAT_MS",
+  "clip_checkpoint": "checkpoints/ViT-B-16.pt",
+  "num_folds": 5,
+  "seed": 42,
+  "stages": [
+    "Ablation-RGB",
+    "Ablation-PBMean",
+    "Ablation-Affinity",
+    "Ablation-Fiedler",
+    "Ablation-Full"
+  ],
+  "hyperparams": {
+    "sigma": 0.5,
+    "num_steps": 5,
+    "lr": 0.01,
+    "lambda_m": 0.1,
+    "k": 5,
+    "grad_clip": 1.0,
+    "early_stop_tol": 1e-06
+  }
+}

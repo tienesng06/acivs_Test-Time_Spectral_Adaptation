@@ -1,0 +1,22 @@
+# Component Contribution Analysis (5-Fold CV)
+
+Protocol: EuroSAT-MS 5-fold stratified CV, seed=42.
+Query text embeddings used for Affinity graph (Design Rule 1 / G7).
+
+| Component | R@1 (mean±std) | R@10 (mean±std) | ΔR@1 vs RGB |
+|-----------|---------------|----------------|-------------|
+| RGB baseline | 80.24±0.69 | 97.62±0.38 | +0.00% |
+| + Per-band encode | 86.33±0.26 | 98.65±0.11 | +6.09% |
+| + Affinity graph | 86.54±0.18 | 98.67±0.11 | +6.30% |
+| + Fiedler | 84.93±0.61 | 98.13±0.16 | +4.69% |
+| + Manifold opt (Full) | 85.02±0.62 | 98.21±0.22 | +4.78% |
+
+Cumulative R@1 delta (Stage1→Stage5): +4.78%
+Paper target: ~+11.4%
+Monotonic R@1 increase: no
+
+Incremental R@1 contributions:
+  + Per-band encode: +6.09 pp
+  + Affinity graph: +0.21 pp
+  + Fiedler: -1.61 pp
+  + Manifold opt (Full): +0.09 pp
