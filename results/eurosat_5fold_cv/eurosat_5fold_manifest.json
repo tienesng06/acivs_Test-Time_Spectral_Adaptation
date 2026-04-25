@@ -1,5 +1,5 @@
 {
-  "dataset_root": "/Users/tienesng06/Desktop/ACIVS_ThayBach/data/EuroSAT_MS",
+  "dataset_root": "/Users/tienesng06/Desktop/ACIVS_ThayBach/data/EuroSAT_MS.local_backup_20260419",
   "clip_checkpoint": "/Users/tienesng06/Desktop/ACIVS_ThayBach/checkpoints/ViT-B-16.pt",
   "results_dir": "/Users/tienesng06/Desktop/ACIVS_ThayBach/results/eurosat_5fold_cv",
   "protocol": "5-fold retrieval CV with cyclic query/gallery assignment",
