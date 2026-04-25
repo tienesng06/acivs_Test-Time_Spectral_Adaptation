@@ -1,0 +1,6 @@
+eurosat_class,bigearth_class,cosine_similarity,l2_distance,shift_magnitude,top_shifted_bands
+HerbaceousVegetation,Natural grassland and sparsely vegetated areas,0.8417,0.799,0.1583,"B09, B08, B01"
+AnnualCrop,Arable land,0.8657,0.6912,0.1343,"B08, B09, B01"
+Forest,Broad-leaved forest,0.9212,0.5602,0.0788,"B04, B03, B01"
+Residential,Urban fabric,0.9453,0.5154,0.0547,"B04, B09, B01"
+Pasture,Pastures,0.9512,0.4776,0.0488,"B04, B09, B03"

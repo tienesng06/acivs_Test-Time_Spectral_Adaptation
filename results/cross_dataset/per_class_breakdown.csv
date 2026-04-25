@@ -1,0 +1,10 @@
+class,n_queries,R@1,R@5,R@10
+Broad-leaved forest,308,89.94,99.35,99.68
+Coniferous forest,394,91.62,99.49,99.49
+Mixed forest,423,92.91,99.76,100.0
+Arable land,453,93.38,99.78,100.0
+Pastures,219,90.87,99.09,100.0
+Complex cultivation patterns,250,92.0,99.6,100.0
+"Land principally occupied by agriculture, with significant areas of natural vegetation",292,92.47,98.97,99.32
+Natural grassland and sparsely vegetated areas,23,73.91,100.0,100.0
+Urban fabric,166,93.37,99.4,100.0

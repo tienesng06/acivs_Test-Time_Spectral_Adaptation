@@ -1,0 +1,24 @@
+{
+  "experiment": "cross_dataset_generalization",
+  "day": "48-49",
+  "week": 7,
+  "task": 3,
+  "timestamp": "2026-04-25T10:51:25.670492+00:00",
+  "elapsed_total_s": 476.0,
+  "zero_shot_definition": "Hyperparameters tuned on EuroSAT val; CLIP weights frozen.",
+  "ours_hyperparameters": {
+    "sigma": 0.5,
+    "tau": null,
+    "lambda_m": 0.1,
+    "k": 5,
+    "num_steps": 5,
+    "lr": 0.01
+  },
+  "eurosat_root": "/Volumes/Data/data/EuroSAT_MS",
+  "bigearth_root": "/Volumes/Data/data/BigEarthNetS2/BigEarthNetS2",
+  "metadata_parquet": "/Users/tienesng06/Desktop/ACIVS_ThayBach/data/BigEarthNetS2.local_backup_20260419/metadata.parquet",
+  "query_size": 1000,
+  "gallery_size": 10000,
+  "seed": 42,
+  "device": "mps"
+}
