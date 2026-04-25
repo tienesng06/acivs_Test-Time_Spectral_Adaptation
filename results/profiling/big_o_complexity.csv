@@ -1,0 +1,7 @@
+component,operation,big_o,expected_cost_driver,notes
+Per-band CLIP encoding,"Replicate each band to 3 channels, resize, run CLIP image encoder",O(B * C_clip),B bands times frozen CLIP forward pass cost,Dominates raw CPU inference in the current machine profile.
+Text encoding,Tokenize and run CLIP text encoder for the class prompt,O(T * C_text),Prompt length T and CLIP text transformer cost,Reported separately because class text embeddings can be cached.
+Affinity graph,"Query scores, B by B pairwise similarity, symmetric normalization",O(B^2 * D),Band-pair dot products over embedding dimension D,Small for B=13 and D=512.
+Fiedler weighting,Build Laplacian and compute eigendecomposition,O(B^3),Dense symmetric eigendecomposition,Asymptotic bottleneck with respect to band count B.
+Test-time optimization,Build k-NN graph once and run S gradient steps,O(B^2 * D + S * B * k * D),"Pairwise distances, neighbor gathers, and S optimization steps","Defaults: S=5, k=5."
+Total canonical inference,Per-band encoding + affinity + Fiedler + optimization,O(B * C_clip + B^2 * D + B^3 + S * B * k * D),CLIP encoding on CPU; eigendecomposition asymptotically in B,Text encoding is excluded from canonical total because it is cacheable.
