@@ -1,0 +1,143 @@
+{
+  "timestamp": "2026-04-21T20:03:48",
+  "dataset": "BigEarthNetS2",
+  "bigearth_root": "/Volumes/Data/data/BigEarthNetS2/BigEarthNetS2",
+  "metadata_parquet": "../data/BigEarthNetS2.local_backup_20260419/metadata.parquet",
+  "clip_checkpoint": "../checkpoints/ViT-B-16.pt",
+  "protocol": {
+    "max_samples": 100000,
+    "seed": 42,
+    "query_size": 1000,
+    "gallery_size": 10000,
+    "train_size": 89000,
+    "top10_classes": [
+      "Arable land",
+      "Mixed forest",
+      "Coniferous forest",
+      "Transitional woodland/shrub",
+      "Broad-leaved forest",
+      "Land principally occupied by agriculture, with significant areas of natural vegetation",
+      "Complex cultivation patterns",
+      "Pastures",
+      "Urban fabric",
+      "Inland waters"
+    ]
+  },
+  "pipeline_params": {
+    "sigma": 0.5,
+    "num_steps": 5,
+    "lr": 0.01,
+    "lambda_m": 0.1,
+    "k": 5,
+    "grad_clip": 1.0,
+    "query_proxy": "class_text_embedding"
+  },
+  "tip_adapter_params": {
+    "alpha": 1.0,
+    "beta": 5.5
+  },
+  "results": {
+    "RGB-CLIP": {
+      "R@1": 91.7,
+      "P@1": 91.7,
+      "ML_Recall@1": 0.0159,
+      "F1@1": 0.0318,
+      "R@5": 99.3,
+      "P@5": 90.5,
+      "ML_Recall@5": 0.0782,
+      "F1@5": 0.1562,
+      "R@10": 99.7,
+      "P@10": 89.04,
+      "ML_Recall@10": 0.1537,
+      "F1@10": 0.3069,
+      "mAP": 70.8308
+    },
+    "PCA": {
+      "R@1": 75.5,
+      "P@1": 75.5,
+      "ML_Recall@1": 0.0124,
+      "F1@1": 0.0248,
+      "R@5": 98.3,
+      "P@5": 77.3,
+      "ML_Recall@5": 0.064,
+      "F1@5": 0.1279,
+      "R@10": 99.3,
+      "P@10": 76.84,
+      "ML_Recall@10": 0.1267,
+      "F1@10": 0.2529,
+      "mAP": 69.677
+    },
+    "NDVI": {
+      "R@1": 91.6,
+      "P@1": 91.6,
+      "ML_Recall@1": 0.0158,
+      "F1@1": 0.0316,
+      "R@5": 99.3,
+      "P@5": 91.14,
+      "ML_Recall@5": 0.0787,
+      "F1@5": 0.1572,
+      "R@10": 99.7,
+      "P@10": 90.25,
+      "ML_Recall@10": 0.1557,
+      "F1@10": 0.3108,
+      "mAP": 71.2841
+    },
+    "Tip-Adapter*": {
+      "R@1": 81.2,
+      "P@1": 81.2,
+      "ML_Recall@1": 0.0138,
+      "F1@1": 0.0275,
+      "R@5": 98.3,
+      "P@5": 81.1,
+      "ML_Recall@5": 0.0689,
+      "F1@5": 0.1377,
+      "R@10": 99.5,
+      "P@10": 80.99,
+      "ML_Recall@10": 0.1377,
+      "F1@10": 0.2749,
+      "mAP": 70.7455
+    },
+    "RS-TransCLIP": {
+      "R@1": 91.2,
+      "P@1": 91.2,
+      "ML_Recall@1": 0.0158,
+      "F1@1": 0.0316,
+      "R@5": 99.0,
+      "P@5": 90.18,
+      "ML_Recall@5": 0.0778,
+      "F1@5": 0.1555,
+      "R@10": 99.8,
+      "P@10": 89.09,
+      "ML_Recall@10": 0.1537,
+      "F1@10": 0.3068,
+      "mAP": 71.0357
+    },
+    "Ours": {
+      "R@1": 92.2,
+      "P@1": 92.2,
+      "ML_Recall@1": 0.0159,
+      "F1@1": 0.0318,
+      "R@5": 99.4,
+      "P@5": 90.32,
+      "ML_Recall@5": 0.0778,
+      "F1@5": 0.1554,
+      "R@10": 100.0,
+      "P@10": 89.58,
+      "ML_Recall@10": 0.1539,
+      "F1@10": 0.3071,
+      "mAP": 71.8875
+    },
+    "DOFA": {
+      "ML_Recall@1": null,
+      "ML_Recall@5": null,
+      "ML_Recall@10": null,
+      "ML_Precision@1": null,
+      "ML_Precision@5": null,
+      "ML_Precision@10": null,
+      "F1@1": null,
+      "F1@5": null,
+      "F1@10": null,
+      "mAP": null
+    }
+  }
+}

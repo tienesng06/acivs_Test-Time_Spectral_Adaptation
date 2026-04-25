@@ -1,0 +1,2 @@
+method,ML_Recall@1,ML_Recall@5,ML_Recall@10,ML_Precision@1,ML_Precision@5,ML_Precision@10,F1@1,F1@5,F1@10,mAP
+DOFA,,,,,,,,,,
