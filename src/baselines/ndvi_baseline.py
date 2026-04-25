@@ -9,11 +9,7 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from tqdm.auto import tqdm
 
-from src.baselines.pca_baseline import (
-    evaluate_multilabel_image_retrieval,
-    load_openai_clip_model,
-    save_csv_rows,
-)
+from src.baselines.pca_baseline import load_openai_clip_model, save_csv_rows
 from src.datasets.bigearth_loader import (
     bigearth_collate_fn,
     build_bigearth_subsets,
@@ -25,25 +21,9 @@ from src.datasets.eurosat import (
 )
 from src.models.clip_utils import preprocess_rgb_for_clip
 from src.models.per_band_encoder import get_device
-from src.utils.metrics import evaluate_text_to_image_retrieval
+from src.utils.metrics import evaluate_multilabel_image_retrieval, evaluate_text_to_image_retrieval
+from src.utils.shared import finalize_metadata
 
-
-def _finalize_metadata(metadata: Dict[str, List[Any]]) -> Dict[str, Any]:
-    finalized: Dict[str, Any] = {}
-    for key, values in metadata.items():
-        if not values:
-            finalized[key] = []
-        elif torch.is_tensor(values[0]):
-            finalized[key] = torch.cat(values, dim=0)
-        else:
-            flattened: List[Any] = []
-            for value in values:
-                if isinstance(value, (list, tuple)):
-                    flattened.extend(list(value))
-                else:
-                    flattened.append(value)
-            finalized[key] = flattened
-    return finalized
 
 
 def build_spectral_index_composite(
@@ -127,7 +107,7 @@ def encode_loader_with_spectral_indices(
                 metadata_store[key].append(value)
 
     result = {"features": torch.cat(feature_chunks, dim=0)}
-    result.update(_finalize_metadata(metadata_store))
+    result.update(finalize_metadata(metadata_store))
     return result
 
 

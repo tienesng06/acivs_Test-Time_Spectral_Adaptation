@@ -62,12 +62,23 @@ def optimize_fusion_weights(
     Optimize spectral fusion weights via test-time gradient descent.
 
     Starting from initial weights (e.g. Fiedler magnitude weights),
-    run a few Adam steps to minimize manifold consistency loss,
+    run a few Adam steps to minimize manifold consistency loss (Eq. 6),
     thereby adapting the fusion to the specific query at test time.
+
+    Design note on ``query_embedding``:
+        This argument is validated for shape consistency but is **not** part
+        of the manifold consistency loss (Eq. 6). The query embedding is used
+        upstream in ``compute_affinity_graph()`` (Eq. 1) to initialize the
+        Fiedler weights that are passed here as ``w_init``. The optimization
+        loop here is purely manifold-consistency-driven (query-agnostic by
+        design) — preserving local spectral structure regardless of the query.
 
     Args:
         band_embeddings:  (B, D) per-band CLIP embeddings (detached)
-        query_embedding:  (D,) or (1, D) query text/image embedding
+        query_embedding:  (D,) or (1, D) query text/image embedding.
+                          Shape-validated but not used in loss computation.
+                          Should be a CLIP text embedding of the query class
+                          (e.g., ``clip_model.encode_text(tokenize([class_text]))``).
         w_init:           (B,) initial weights (e.g. from Fiedler vector)
         num_steps:        number of Adam optimization steps (default 5)
         lr:               learning rate for Adam (default 0.01)

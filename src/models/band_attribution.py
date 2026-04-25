@@ -918,13 +918,13 @@ def compute_attribution_from_h5(
                 q_emb = F.normalize(q_emb, dim=-1)
                 class_query_embeddings[cls] = q_emb.squeeze(0).cpu()
     else:
-        # Use mean band embedding as proxy query
-        class_query_embeddings = {}
-        for cls in unique_classes:
-            mask = [i for i, ln in enumerate(label_names) if ln == cls]
-            cls_embeddings = embeddings[mask]  # (N_cls, 13, 512)
-            mean_emb = cls_embeddings.mean(dim=(0, 1))  # (512,)
-            class_query_embeddings[cls] = F.normalize(mean_emb, dim=0)
+        # CLIP model is required — Design Authority Rule 1:
+        # query_embedding MUST be class text embedding, not mean(band_embeddings).
+        raise ValueError(
+            "clip_model and clip_tokenize_fn are required. "
+            "Use load_openai_clip_model() from src.utils.shared to load them. "
+            "mean(band_embeddings) proxy is no longer supported (Fix G7 Phase 2)."
+        )
 
     # Build per-sample lists
     band_emb_list = []

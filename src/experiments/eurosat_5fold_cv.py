@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import csv
 import json
 import math
 from pathlib import Path
@@ -31,6 +30,7 @@ from src.models.clip_utils import encode_test_gallery_rgb
 from src.models.per_band_encoder import encode_multispectral_batch, get_device
 from src.models.retrieval_pipeline import MultispectralRetrievalPipeline
 from src.utils.metrics import evaluate_text_to_image_retrieval
+from src.utils.shared import finalize_metadata, save_csv_rows
 
 
 DEFAULT_LOCAL_METHODS: tuple[str, ...] = (
@@ -46,46 +46,9 @@ DEFAULT_ALL_METHODS: tuple[str, ...] = DEFAULT_LOCAL_METHODS + DEFAULT_EXTERNAL_
 DEFAULT_KS: tuple[int, ...] = (1, 5, 10)
 
 
-def save_csv_rows(rows: Sequence[Dict[str, Any]], output_path: Path) -> None:
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    if not rows:
-        return
-
-    fieldnames: List[str] = []
-    seen: set[str] = set()
-    for row in rows:
-        for key in row.keys():
-            if key not in seen:
-                seen.add(key)
-                fieldnames.append(key)
-
-    with output_path.open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
-
-
 def write_json(payload: Mapping[str, Any], output_path: Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2))
-
-
-def _finalize_metadata(metadata: Dict[str, List[Any]]) -> Dict[str, Any]:
-    finalized: Dict[str, Any] = {}
-    for key, values in metadata.items():
-        if not values:
-            finalized[key] = []
-        elif torch.is_tensor(values[0]):
-            finalized[key] = torch.cat(values, dim=0)
-        else:
-            flat: List[Any] = []
-            for value in values:
-                if isinstance(value, (list, tuple)):
-                    flat.extend(list(value))
-                else:
-                    flat.append(value)
-            finalized[key] = flat
-    return finalized
 
 
 def _build_loader(
@@ -300,7 +263,7 @@ def encode_loader_with_band_embeddings(
     result = {
         "band_embeddings": torch.cat(band_embedding_chunks, dim=0),
     }
-    result.update(_finalize_metadata(metadata_store))
+    result.update(finalize_metadata(metadata_store))
     return result
 
 
@@ -308,12 +271,36 @@ def fuse_band_embeddings(
     batch_band_embeddings: torch.Tensor,
     pipeline: MultispectralRetrievalPipeline,
     *,
+    query_text_features: torch.Tensor,
+    sample_labels: torch.Tensor,
     desc: str,
     show_progress: bool,
 ) -> Dict[str, Any]:
+    """
+    Fuse per-band embeddings using the MultispectralRetrievalPipeline.
+
+    The affinity graph (Eq. 1) is conditioned on the text embedding of each
+    sample's class label, as specified in the design document (Day 21).
+    This replaces the previous approximation of using mean(band_embeddings)
+    as a proxy query, aligning implementation with ACIVS_2026_Implementation_Plan.
+
+    Args:
+        batch_band_embeddings: [N, B, D] per-band embeddings for N samples.
+        pipeline: MultispectralRetrievalPipeline instance.
+        query_text_features: [C, D] L2-normalised class text embeddings from CLIP.
+        sample_labels: [N] integer class indices for each sample.
+        desc: tqdm description string.
+        show_progress: whether to show a tqdm progress bar.
+
+    Returns:
+        Dict with keys: features, elapsed_ms, optimization_ms,
+        avg_fusion_ms, avg_optimization_ms.
+    """
     fused_features: List[torch.Tensor] = []
     elapsed_ms: List[float] = []
     optimization_ms: List[float] = []
+
+    query_text_features = F.normalize(query_text_features.float().cpu(), dim=-1)
 
     iterator: Iterable[int] = range(batch_band_embeddings.shape[0])
     if show_progress:
@@ -321,11 +308,13 @@ def fuse_band_embeddings(
 
     for idx in iterator:
         band_embeddings = batch_band_embeddings[idx].cpu().float()
-        proxy_query = F.normalize(band_embeddings.mean(dim=0), dim=0)
+        label_idx = int(sample_labels[idx].item())
+        # Use class text embedding as query — text-conditioned affinity (Eq. 1)
+        query_embedding = query_text_features[label_idx]
         with torch.enable_grad():
             result = pipeline.retrieve(
                 band_embeddings=band_embeddings,
-                query_embedding=proxy_query,
+                query_embedding=query_embedding,
             )
         fused_features.append(result.fused_embedding.cpu())
         elapsed_ms.append(float(result.elapsed_ms))
@@ -750,6 +739,7 @@ def run_eurosat_5fold_cv(
     rs_transclip_affinity_topk: int = 20,
     rs_transclip_affinity_chunk_size: int = 256,
     ours_sigma: float = 0.5,
+    ours_tau: Optional[float] = None,
     ours_num_steps: int = 5,
     ours_lr: float = 0.01,
     ours_lambda_m: float = 0.1,
@@ -1158,6 +1148,7 @@ def run_eurosat_5fold_cv(
             )
             pipeline = MultispectralRetrievalPipeline(
                 sigma=ours_sigma,
+                tau=ours_tau,
                 num_steps=ours_num_steps,
                 lr=ours_lr,
                 lambda_m=ours_lambda_m,
@@ -1168,12 +1159,16 @@ def run_eurosat_5fold_cv(
             query_fused = fuse_band_embeddings(
                 query_band["band_embeddings"],
                 pipeline,
+                query_text_features=text_features,
+                sample_labels=query_band["label"],
                 desc=f"Fold {fold_id} Ours fuse query",
                 show_progress=show_progress,
             )
             gallery_fused = fuse_band_embeddings(
                 gallery_band["band_embeddings"],
                 pipeline,
+                query_text_features=text_features,
+                sample_labels=gallery_band["label"],
                 desc=f"Fold {fold_id} Ours fuse gallery",
                 show_progress=show_progress,
             )
@@ -1189,6 +1184,7 @@ def run_eurosat_5fold_cv(
                     "method": "Ours",
                     **common_row,
                     "ours_sigma": ours_sigma,
+                    "ours_tau": ours_tau,
                     "ours_num_steps": ours_num_steps,
                     "ours_lr": ours_lr,
                     "ours_lambda_m": ours_lambda_m,

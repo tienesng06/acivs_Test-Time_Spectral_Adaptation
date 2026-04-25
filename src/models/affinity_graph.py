@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Dict, Tuple
+from typing import Dict, Optional, Tuple
 import torch
 import torch.nn.functional as F
 
@@ -125,6 +125,7 @@ def compute_affinity_graph(
     band_embeddings: torch.Tensor,
     query_embedding: torch.Tensor,
     sigma: float = 0.5,
+    tau: Optional[float] = None,
     normalize_inputs: bool = True,
     clamp_similarity_nonnegative: bool = True,
     return_details: bool = False,
@@ -134,16 +135,25 @@ def compute_affinity_graph(
 
     WeeklyTasks formulation:
         1) query_weights = softmax((band @ query) / sigma)
-        2) S = band @ band.T
+        2) S = band @ band.T  [optionally softmax-normalized with tau]
         3) A = S * (w_i * w_j)
         4) A_norm = D^{-1/2} A D^{-1/2}
 
     Args:
         band_embeddings: Tensor of shape (B, D)
         query_embedding: Tensor of shape (D,) or (1, D)
-        sigma: softmax temperature
+        sigma: softmax temperature for query alignment (Eq. 1)
+        tau: softmax temperature for affinity normalization (optional).
+            When None (default), the raw pairwise similarity is used as-is
+            (original behavior, backward-compatible).
+            When a float, applies row-wise softmax(S / tau) to the
+            pairwise similarity matrix before weighting:
+              - small tau → sharper (concentrate on most similar band pairs)
+              - large tau → softer (more uniform distribution)
+            Typical range for sensitivity scan: [0.05, 0.1, 0.2, 0.5].
         normalize_inputs: L2-normalize embeddings before dot products
         clamp_similarity_nonnegative: clamp S >= 0 to keep graph stable
+            (ignored when tau is not None, as softmax output is always >= 0)
         return_details: if True, also return intermediate tensors
 
     Returns:
@@ -164,8 +174,15 @@ def compute_affinity_graph(
     similarity_matrix = compute_pairwise_similarity(
         band_embeddings=band_embeddings,
         normalize_inputs=normalize_inputs,
-        clamp_min_zero=clamp_similarity_nonnegative,
+        clamp_min_zero=(clamp_similarity_nonnegative and tau is None),
     )  # (B, B)
+
+    # Optional: softmax-normalize pairwise similarity with temperature tau
+    # (tau=None → keep raw similarity, backward-compatible)
+    if tau is not None:
+        if tau <= 0:
+            raise ValueError(f"tau must be > 0, got {tau}")
+        similarity_matrix = torch.softmax(similarity_matrix / tau, dim=-1)
 
     # Outer product of weights: (B, 1) * (1, B) -> (B, B)
     weight_matrix = query_weights.unsqueeze(1) * query_weights.unsqueeze(0)

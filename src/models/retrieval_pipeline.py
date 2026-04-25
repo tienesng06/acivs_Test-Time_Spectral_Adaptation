@@ -76,6 +76,7 @@ class MultispectralRetrievalPipeline:
         *,
         # Affinity graph params
         sigma: float = 0.5,
+        tau: Optional[float] = None,
         normalize_inputs: bool = True,
         # Fiedler params
         normalized_laplacian: bool = True,
@@ -90,6 +91,7 @@ class MultispectralRetrievalPipeline:
         l2_normalize_output: bool = True,
     ):
         self.sigma = sigma
+        self.tau = tau
         self.normalize_inputs = normalize_inputs
         self.normalized_laplacian = normalized_laplacian
         self.num_steps = num_steps
@@ -114,9 +116,25 @@ class MultispectralRetrievalPipeline:
         """
         Run 6-step pipeline on pre-encoded embeddings.
 
+        Pipeline steps:
+            1. Receive per-band CLIP embeddings  (B, D)
+            2. Receive query embedding            (D,)  ← should be text embedding
+            3. Compute affinity graph             → A_norm (B, B)  [Eq. 1]
+            4. Compute Fiedler magnitude weights  → w_init (B,)    [Eq. 2]
+            5. Optimize fusion weights via Adam   → w_opt  (B,)    [Eq. 6]
+            6. Weighted fusion + L2-normalize     → fused  (D,)
+
+        Design note on ``query_embedding``:
+            For query-conditioned retrieval (as described in the paper),
+            ``query_embedding`` should be a **text embedding** from CLIP's
+            text encoder (e.g., encode_text(tokenize(["A satellite image of forest"]))).
+            Using ``mean(band_embeddings)`` as a proxy is a valid self-conditioned
+            fallback but deviates from the paper's query-conditioned framing.
+
         Args:
             band_embeddings: (B, D) per-band CLIP embeddings
-            query_embedding: (D,) or (1, D) query embedding
+            query_embedding: (D,) or (1, D) CLIP text embedding of the query class.
+                             Must be on the same dtype as band_embeddings.
 
         Returns:
             PipelineResult with fused embedding, weights, timing, etc.
@@ -142,6 +160,7 @@ class MultispectralRetrievalPipeline:
             band_embeddings=band_embeddings,
             query_embedding=query_embedding,
             sigma=self.sigma,
+            tau=self.tau,
             normalize_inputs=self.normalize_inputs,
             return_details=False,
         )
@@ -316,6 +335,7 @@ class MultispectralRetrievalPipeline:
         return (
             f"MultispectralRetrievalPipeline("
             f"sigma={self.sigma}, "
+            f"tau={self.tau}, "
             f"num_steps={self.num_steps}, "
             f"lr={self.lr}, "
             f"lambda_m={self.lambda_m}, "

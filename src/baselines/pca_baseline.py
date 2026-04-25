@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import argparse
-import csv
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence
 
@@ -14,7 +13,12 @@ from src.datasets.bigearth_loader import bigearth_collate_fn, build_bigearth_sub
 from src.datasets.eurosat import build_eurosat_dataloaders
 from src.models.clip_utils import preprocess_rgb_for_clip
 from src.models.per_band_encoder import get_device
-from src.utils.metrics import average_precision_from_relevance, evaluate_text_to_image_retrieval
+from src.utils.metrics import (
+    average_precision_from_relevance,
+    evaluate_multilabel_image_retrieval,
+    evaluate_text_to_image_retrieval,
+)
+from src.utils.shared import finalize_metadata, load_openai_clip_model, save_csv_rows
 
 
 def fit_global_pca_from_loader(
@@ -179,45 +183,7 @@ def batched_pca_to_rgb(
     return rgb.squeeze(0) if squeeze_batch else rgb
 
 
-def load_openai_clip_model(
-    checkpoint_path: Path,
-    device: torch.device,
-):
-    """Load OpenAI CLIP from a local checkpoint path."""
-    try:
-        import clip
-    except ImportError as exc:
-        raise ImportError(
-            "clip package is required. Install with: "
-            "pip install git+https://github.com/openai/CLIP.git"
-        ) from exc
 
-    if not checkpoint_path.exists():
-        raise FileNotFoundError(f"CLIP checkpoint not found: {checkpoint_path}")
-
-    model, _ = clip.load(str(checkpoint_path), device=device, jit=False)
-    model.eval()
-    for param in model.parameters():
-        param.requires_grad = False
-    return model, clip.tokenize
-
-
-def _finalize_metadata(metadata: Dict[str, List[Any]]) -> Dict[str, Any]:
-    finalized: Dict[str, Any] = {}
-    for key, values in metadata.items():
-        if not values:
-            finalized[key] = []
-        elif torch.is_tensor(values[0]):
-            finalized[key] = torch.cat(values, dim=0)
-        else:
-            flattened: List[Any] = []
-            for value in values:
-                if isinstance(value, (list, tuple)):
-                    flattened.extend(list(value))
-                else:
-                    flattened.append(value)
-            finalized[key] = flattened
-    return finalized
 
 
 @torch.no_grad()
@@ -260,82 +226,12 @@ def encode_loader_with_pca(
                 metadata_store[key].append(value)
 
     result = {"features": torch.cat(feature_chunks, dim=0)}
-    result.update(_finalize_metadata(metadata_store))
+    result.update(finalize_metadata(metadata_store))
     return result
 
 
-def evaluate_multilabel_image_retrieval(
-    query_features: torch.Tensor,
-    query_labels: torch.Tensor,
-    gallery_features: torch.Tensor,
-    gallery_labels: torch.Tensor,
-    ks: Sequence[int] = (1, 5, 10),
-) -> tuple[Dict[str, float], torch.Tensor, torch.Tensor, torch.Tensor, List[Dict[str, Any]]]:
-    """
-    Evaluate image-to-image retrieval with multi-label relevance.
-
-    A gallery image is relevant if it shares at least one active label with the query.
-    """
-    query_features = F.normalize(query_features.cpu().float(), dim=-1)
-    gallery_features = F.normalize(gallery_features.cpu().float(), dim=-1)
-    query_labels = query_labels.cpu().bool()
-    gallery_labels = gallery_labels.cpu().bool()
-
-    if query_labels.ndim != 2 or gallery_labels.ndim != 2:
-        raise ValueError("Multi-label evaluation expects label tensors of shape [N, C].")
-
-    similarity_matrix = query_features @ gallery_features.T
-    ranked_indices = torch.argsort(similarity_matrix, dim=1, descending=True)
-
-    relevance_matrix = (query_labels.float() @ gallery_labels.float().T) > 0
-    ranked_relevance = torch.gather(
-        relevance_matrix.to(torch.int64),
-        1,
-        ranked_indices,
-    ).bool()
-
-    total_relevant = relevance_matrix.sum(dim=1).clamp(min=1)
-    metrics: Dict[str, float] = {}
-
-    for k in ks:
-        topk_rel = ranked_relevance[:, :k].float()
-        precision_q = topk_rel.mean(dim=1)
-        recall_q = topk_rel.sum(dim=1) / total_relevant.float()
-        f1_q = torch.where(
-            (precision_q + recall_q) > 0,
-            2.0 * precision_q * recall_q / (precision_q + recall_q),
-            torch.zeros_like(precision_q),
-        )
-
-        metrics[f"R@{k}"] = ranked_relevance[:, :k].any(dim=1).float().mean().item() * 100.0
-        metrics[f"P@{k}"] = precision_q.mean().item() * 100.0
-        metrics[f"ML_Recall@{k}"] = recall_q.mean().item() * 100.0
-        metrics[f"F1@{k}"] = f1_q.mean().item() * 100.0
-
-    ap_scores: List[float] = []
-    per_query_results: List[Dict[str, Any]] = []
-
-    for q_idx in range(query_features.shape[0]):
-        relevance_row = ranked_relevance[q_idx]
-        ap = average_precision_from_relevance(relevance_row)
-        ap_scores.append(ap)
-
-        hit_positions = torch.where(relevance_row)[0]
-        first_hit_rank = int(hit_positions[0].item()) + 1 if len(hit_positions) > 0 else None
-
-        row: Dict[str, Any] = {
-            "query_index": q_idx,
-            "num_active_labels": int(query_labels[q_idx].sum().item()),
-            "num_relevant_gallery": int(relevance_matrix[q_idx].sum().item()),
-            "AP_percent": ap * 100.0,
-            "first_hit_rank": first_hit_rank,
-        }
-        for k in ks:
-            row[f"hit@{k}"] = bool(ranked_relevance[q_idx, :k].any().item())
-        per_query_results.append(row)
-
-    metrics["mAP"] = sum(ap_scores) / max(len(ap_scores), 1) * 100.0
-    return metrics, similarity_matrix, ranked_indices, ranked_relevance, per_query_results
+# evaluate_multilabel_image_retrieval is imported from src.utils.metrics
+# (canonical location per design doc Week 8 codebase structure)
 
 
 def run_eurosat_pca_baseline(
