@@ -1,0 +1,71 @@
+{
+  "script": "scripts/run_hyperparameter_sensitivity.py",
+  "dataset": "data/EuroSAT_MS",
+  "checkpoint": "checkpoints/ViT-B-16.pt",
+  "fold_id": 0,
+  "num_folds": 5,
+  "seed": 42,
+  "smoke_test": false,
+  "params_swept": [
+    "sigma",
+    "tau",
+    "lambda_m",
+    "k",
+    "num_steps",
+    "lr"
+  ],
+  "optimal_fixed": {
+    "sigma": "0.5",
+    "tau": "None",
+    "lambda_m": "0.1",
+    "k": "5",
+    "num_steps": "5",
+    "lr": "0.01"
+  },
+  "grid": {
+    "sigma": [
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      1.0
+    ],
+    "tau": [
+      0.05,
+      0.1,
+      0.2,
+      0.5
+    ],
+    "lambda_m": [
+      0.01,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "k": [
+      3,
+      5,
+      7,
+      10
+    ],
+    "num_steps": [
+      1,
+      3,
+      5,
+      7,
+      10
+    ],
+    "lr": [
+      0.005,
+      0.01,
+      0.02,
+      0.05
+    ]
+  },
+  "num_experiments": 26,
+  "outputs": {
+    "raw_csv": "results/hyperparameter_sensitivity/sensitivity_raw.csv",
+    "summary_csv": "results/hyperparameter_sensitivity/sensitivity_summary.csv",
+    "composite_png": "results/hyperparameter_sensitivity/sensitivity_all_6.png"
+  }
+}
